@@ -61,7 +61,6 @@ namespace gsb
             mdpdate = mdpdate[8, 9]+;
             19-jan-2003
                 2003 - 06 - 18 00:00:00
-                Hey
             if (true)
             {
                 this.Hide();
