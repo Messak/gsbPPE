@@ -51,16 +51,14 @@ namespace gsb
 
 
             CURS mdp = new CURS(ChaineConnexion);
-            string req = "SELECT COL_NOM, COL_DATEEMBAUCHE FROM collaborateur WHERE COL_NOM='" + inputID.Text+"';";
+            string req = "SELECT COL_NOM, COL_DATEEMBAUCHE FROM collaborateur WHERE COL_NOM='" + inputID.Text + "';";
             mdp.ReqSelect(req);
             errorConnection.Clear();
 
             string mdpdate = mdp.champ("COL_DATEEMBAUCHE").ToString();
             mdp.fermer();
 
-            mdpdate = mdpdate[8, 9]+;
-            19-jan-2003
-                2003 - 06 - 18 00:00:00
+           
             if (true)
             {
                 this.Hide();
