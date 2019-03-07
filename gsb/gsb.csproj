@@ -62,6 +62,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="accueil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="accueil.Designer.cs">
+      <DependentUpon>accueil.cs</DependentUpon>
+    </Compile>
     <Compile Include="CURS.cs" />
     <Compile Include="Connexion.cs">
       <SubType>Form</SubType>
@@ -71,6 +77,15 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RapportVisite.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RapportVisite.Designer.cs">
+      <DependentUpon>RapportVisite.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="accueil.resx">
+      <DependentUpon>accueil.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Connexion.resx">
       <DependentUpon>Connexion.cs</DependentUpon>
     </EmbeddedResource>
@@ -82,7 +97,11 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="RapportVisite.resx">
+      <DependentUpon>RapportVisite.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -107,6 +126,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\rapport.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
