@@ -34,6 +34,8 @@
             this.buttonDeconnexion = new System.Windows.Forms.Button();
             this.buttonListerCompteRendu = new System.Windows.Forms.Button();
             this.buttonRedigerCompteRendu = new System.Windows.Forms.Button();
+            this.statututilisateur = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // labelMainTitle
@@ -108,11 +110,30 @@
             this.buttonRedigerCompteRendu.UseVisualStyleBackColor = true;
             this.buttonRedigerCompteRendu.Visible = false;
             // 
+            // statututilisateur
+            // 
+            this.statututilisateur.AutoSize = true;
+            this.statututilisateur.Location = new System.Drawing.Point(933, 9);
+            this.statututilisateur.Name = "statututilisateur";
+            this.statututilisateur.Size = new System.Drawing.Size(0, 17);
+            this.statututilisateur.TabIndex = 6;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(725, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(152, 17);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Connecté en tant que :";
+            // 
             // accueil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1025, 443);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.statututilisateur);
             this.Controls.Add(this.buttonRedigerCompteRendu);
             this.Controls.Add(this.buttonListerCompteRendu);
             this.Controls.Add(this.buttonDeconnexion);
@@ -122,6 +143,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "accueil";
             this.Text = "Accueil";
+            this.Load += new System.EventHandler(this.accueil_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -135,5 +157,7 @@
         private System.Windows.Forms.Button buttonDeconnexion;
         private System.Windows.Forms.Button buttonListerCompteRendu;
         private System.Windows.Forms.Button buttonRedigerCompteRendu;
+        private System.Windows.Forms.Label statututilisateur;
+        private System.Windows.Forms.Label label1;
     }
 }

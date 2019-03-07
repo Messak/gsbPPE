@@ -10,8 +10,11 @@ using System.Windows.Forms;
 
 namespace gsb
 {
+
     public partial class Connexion : Form
     {
+    string _statutuser;
+    public string Statutuser { get => _statutuser; set => _statutuser = value; }
         string chaineConnexion;
         public string ChaineConnexion
         {
@@ -60,24 +63,26 @@ namespace gsb
             if (!conex.Fin())
                 {
                 string matuser = conex.champ("COL_DATEEMBAUCHE").ToString();
-                string statutuser = "";
+                 _statutuser = "";
 
                 CURS ifvisiteur = new CURS(ChaineConnexion);
                 ifvisiteur.ReqSelect("SELECT * FROM visiteur WHERE COL_MATRICULE='" + matuser + "';");
                 if (!ifvisiteur.Fin())
                 {
-                    statutuser = "visiteur";
+                    _statutuser = "visiteur";
                 }
                 ifvisiteur.fermer();
                 CURS ifresponsable = new CURS(ChaineConnexion);
                 ifresponsable.ReqSelect("SELECT * FROM responsable WHERE COL_MATRICULE='" + matuser + "';");
                 if (!ifresponsable.Fin())
                 {
-                    statutuser = "responsable";
+                    _statutuser = "responsable";
                 }
                 ifresponsable.fermer();
                 accueil home = new accueil();
-                    this.Hide();
+                home.Statutuser = this.Statutuser;
+
+                this.Hide();
                     home.Show(); 
             }
                 else

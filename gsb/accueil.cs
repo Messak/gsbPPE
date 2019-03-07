@@ -12,6 +12,9 @@ namespace gsb
 {
     public partial class accueil : Form
     {
+        string _statutuser;
+        public string Statutuser { get => _statutuser; set => _statutuser = value; }
+
         public accueil()
         {
             InitializeComponent();
@@ -29,6 +32,12 @@ namespace gsb
             Connexion firstecran = new Connexion();
             this.Hide();
             firstecran.Show();
+        }
+
+        private void accueil_Load(object sender, EventArgs e)
+        {
+            statututilisateur.Text = _statutuser;
+
         }
     }
 }
