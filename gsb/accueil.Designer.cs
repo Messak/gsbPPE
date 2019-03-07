@@ -113,7 +113,7 @@
             // statututilisateur
             // 
             this.statututilisateur.AutoSize = true;
-            this.statututilisateur.Location = new System.Drawing.Point(933, 9);
+            this.statututilisateur.Location = new System.Drawing.Point(894, 9);
             this.statututilisateur.Name = "statututilisateur";
             this.statututilisateur.Size = new System.Drawing.Size(0, 17);
             this.statututilisateur.TabIndex = 6;
@@ -121,7 +121,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(725, 9);
+            this.label1.Location = new System.Drawing.Point(736, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(152, 17);
             this.label1.TabIndex = 7;

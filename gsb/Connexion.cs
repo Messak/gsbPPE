@@ -61,9 +61,9 @@ namespace gsb
                 "AND DATE_FORMAT(COL_DATEEMBAUCHE, '%Y-%b-%d') = '" + inputmdp + "';");
 
             if (!conex.Fin())
-                {
+            {
                 string matuser = conex.champ("COL_DATEEMBAUCHE").ToString();
-                 _statutuser = "";
+                _statutuser = "";
 
                 CURS ifvisiteur = new CURS(ChaineConnexion);
                 ifvisiteur.ReqSelect("SELECT * FROM visiteur WHERE COL_MATRICULE='" + matuser + "';");
@@ -72,6 +72,7 @@ namespace gsb
                     _statutuser = "visiteur";
                 }
                 ifvisiteur.fermer();
+
                 CURS ifresponsable = new CURS(ChaineConnexion);
                 ifresponsable.ReqSelect("SELECT * FROM responsable WHERE COL_MATRICULE='" + matuser + "';");
                 if (!ifresponsable.Fin())
@@ -79,16 +80,17 @@ namespace gsb
                     _statutuser = "responsable";
                 }
                 ifresponsable.fermer();
+
                 accueil home = new accueil();
                 home.Statutuser = this.Statutuser;
 
                 this.Hide();
-                    home.Show(); 
+                home.Show();
             }
-                else
-                {
-                    errorConnection.SetError(submit, "Vérifier vote login ou votre mot de passe ! ");
-                }
+            else
+            {
+                errorConnection.SetError(submit, "Vérifier vote login ou votre mot de passe ! ");
+            }
             
             conex.fermer();
         }
