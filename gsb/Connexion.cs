@@ -57,7 +57,6 @@ namespace gsb
 
             string mdpdate = mdp.champ("COL_DATEEMBAUCHE").ToString();
             mdp.fermer();
-            test
             if (true)
             {
                 this.Hide();

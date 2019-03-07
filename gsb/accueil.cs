@@ -16,5 +16,12 @@ namespace gsb
         {
             InitializeComponent();
         }
+
+        private void buttonCompteRendu_Click(object sender, EventArgs e)
+        {
+            buttonCompteRendu.Visible = false;
+            buttonListerCompteRendu.Visible = true;
+            buttonRedigerCompteRendu.Visible = true;
+        }
     }
 }
