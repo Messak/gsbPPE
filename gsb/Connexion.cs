@@ -48,24 +48,31 @@ namespace gsb
 
         private void submit_Click(object sender, EventArgs e)
         {
-
-
-            CURS mdp = new CURS(ChaineConnexion);
-            string req = "SELECT COL_NOM, COL_DATEEMBAUCHE FROM collaborateur WHERE COL_NOM='" + inputID.Text + "';";
-            mdp.ReqSelect(req);
             errorConnection.Clear();
+            string inputid = inputID.Text.ToString();
+            string inputmdp = inputMDP.Text.ToString();
 
-            string mdpdate = mdp.champ("COL_DATEEMBAUCHE").ToString();
-            mdp.fermer();
-            test
-            if (true)
-            {
-                this.Hide();
-            }
-            else
-            {
-                errorConnection.SetError(submit, "Vérifier vote login ou votre mot de passe ! ");
-            }
+            CURS conex = new CURS(ChaineConnexion);
+            conex.ReqSelect("SELECT COL_NOM, COL_DATEEMBAUCHE FROM collaborateur " +
+                "WHERE COL_NOM='" + inputid + "' " +
+                "AND DATE_FORMAT(COL_DATEEMBAUCHE, '%Y-%b-%d') = '" + inputmdp + "';");
+
+            string vraimdp = conex.champ("COL_DATEEMBAUCHE").ToString();
+
+            
+                if (!conex.Fin())
+                {
+                    Form accueil = new Form();
+                    this.Hide();
+                    accueil.Show();
+                    
+                }
+                else
+                {
+                    errorConnection.SetError(submit, "Vérifier vote login ou votre mot de passe ! ");
+                }
+            
+            conex.fermer();
         }
     }
 }
