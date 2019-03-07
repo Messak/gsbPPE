@@ -57,8 +57,6 @@ namespace gsb
                 "WHERE COL_NOM='" + inputid + "' " +
                 "AND DATE_FORMAT(COL_DATEEMBAUCHE, '%Y-%b-%d') = '" + inputmdp + "';");
 
-            string vraimdp = conex.champ("COL_DATEEMBAUCHE").ToString();
-
             
                 if (!conex.Fin())
                 {
