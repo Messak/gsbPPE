@@ -1,6 +1,6 @@
 ﻿namespace gsb
 {
-    partial class Form1
+    partial class Connexion
     {
         /// <summary>
         /// Variable nécessaire au concepteur.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Connexion));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.inputID = new System.Windows.Forms.TextBox();

@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace gsb
 {
-    public partial class Form1 : Form
+    public partial class Connexion : Form
     {
         string chaineConnexion;
         public string ChaineConnexion
@@ -19,7 +19,7 @@ namespace gsb
             set { chaineConnexion = value; }
         }
 
-        public Form1()
+        public Connexion()
         {
              ChaineConnexion = "server=localhost;user=root;database=gsbcsharp";
             InitializeComponent();
@@ -57,8 +57,7 @@ namespace gsb
 
             string mdpdate = mdp.champ("COL_DATEEMBAUCHE").ToString();
             mdp.fermer();
-
-           
+            test
             if (true)
             {
                 this.Hide();
