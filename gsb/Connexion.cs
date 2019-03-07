@@ -63,27 +63,22 @@ namespace gsb
                 string statutuser = "";
 
                 CURS ifvisiteur = new CURS(ChaineConnexion);
-                ifvisiteur.ReqSelect("SELECT * FROM visiteur WHERE COL_MATRICULE='"+matuser+"';");
+                ifvisiteur.ReqSelect("SELECT * FROM visiteur WHERE COL_MATRICULE='" + matuser + "';");
                 if (!ifvisiteur.Fin())
                 {
                     statutuser = "visiteur";
-                    Form accueil = new Form();
-                    this.Hide();
-                    accueil.Show();
                 }
-
+                ifvisiteur.fermer();
                 CURS ifresponsable = new CURS(ChaineConnexion);
                 ifresponsable.ReqSelect("SELECT * FROM responsable WHERE COL_MATRICULE='" + matuser + "';");
                 if (!ifresponsable.Fin())
                 {
                     statutuser = "responsable";
-                    Form accueil = new Form();
-                    this.Hide();
-                    accueil.Show();
                 }
-                Form accueil = new Form();
+                ifresponsable.fermer();
+                accueil home = new accueil();
                     this.Hide();
-                    accueil.Show(); 
+                    home.Show(); 
             }
                 else
                 {

@@ -23,5 +23,12 @@ namespace gsb
             buttonListerCompteRendu.Visible = true;
             buttonRedigerCompteRendu.Visible = true;
         }
+
+        private void buttonDeconnexion_Click(object sender, EventArgs e)
+        {
+            Connexion firstecran = new Connexion();
+            this.Hide();
+            firstecran.Show();
+        }
     }
 }
