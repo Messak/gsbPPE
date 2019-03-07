@@ -69,7 +69,7 @@
             // buttonDeconnexion
             // 
             this.buttonDeconnexion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonDeconnexion.Location = new System.Drawing.Point(297, 253);
+            this.buttonDeconnexion.Location = new System.Drawing.Point(297, 254);
             this.buttonDeconnexion.Name = "buttonDeconnexion";
             this.buttonDeconnexion.Size = new System.Drawing.Size(180, 43);
             this.buttonDeconnexion.TabIndex = 3;
