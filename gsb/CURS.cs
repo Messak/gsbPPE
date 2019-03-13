@@ -5,6 +5,7 @@ using System.Text;
 using MySql.Data;
 using MySql.Data.MySqlClient;
 using MySql.Data.Types;
+using System.Data;
 
 namespace gsb
 {
@@ -14,9 +15,11 @@ namespace gsb
         MySqlConnection maconnexion;
         MySqlCommand macommand;
         MySqlDataReader monreader;
+        MySqlParameterCollection col;
         public CURS(string connec)
         {
             maconnexion = new MySqlConnection(connec);
+
             maconnexion.Open();
             monreader = null;
 
@@ -56,11 +59,49 @@ namespace gsb
 
 
         }
+
+
+        public void ajouteparametreCol(string nompara, object valeur)
+        {
+
+            col.AddWithValue(nompara, valeur);
+
+        }
+        public void directionparametreCol(string nompara, ParameterDirection Direction)
+        {
+            col[nompara].Direction = Direction;
+        }
+        public void setCol(int i, Object valeur)
+        {
+            col[i].Value = valeur;
+
+        }
+
+        public MySqlParameterCollection getCol()
+        {
+
+            return col;
+        }
         public void ReqAdmin(string req)
         {
 
             macommand = new MySqlCommand(req, maconnexion);
             macommand.ExecuteNonQuery();
+
+        }
+        public Object Appelfonctstockee()
+        {
+            Object O = macommand.ExecuteNonQuery();
+            return O;
+
+        }
+        public void DefFonctStockee(string req)
+        {
+
+            macommand = new MySqlCommand(req, maconnexion);
+            macommand.CommandType = CommandType.StoredProcedure;
+            col = macommand.Parameters;
+
 
         }
         public object champ(string nomChamp)
@@ -73,6 +114,15 @@ namespace gsb
         public Boolean Fin()
         {
             return fin;
+        }
+        public string Compter(string req)
+        {
+
+            macommand = new MySqlCommand(req, maconnexion);
+            return macommand.ExecuteScalar().ToString();
+
+
+
         }
     }
 }

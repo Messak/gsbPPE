@@ -13,7 +13,7 @@ namespace gsb
 
     public partial class Connexion : Form
     {
-    string _statutuser;
+    string _statutuser="";
     public string Statutuser { get => _statutuser; set => _statutuser = value; }
         string chaineConnexion;
         public string ChaineConnexion
@@ -62,16 +62,7 @@ namespace gsb
 
             if (!conex.Fin())
             {
-                string matuser = conex.champ("COL_DATEEMBAUCHE").ToString();
-                _statutuser = "";
-
-                CURS ifvisiteur = new CURS(ChaineConnexion);
-                ifvisiteur.ReqSelect("SELECT * FROM visiteur WHERE COL_MATRICULE='" + matuser + "';");
-                if (!ifvisiteur.Fin())
-                {
-                    _statutuser = "visiteur";
-                }
-                ifvisiteur.fermer();
+                string matuser = conex.champ("COL_MATRICULE").ToString();
 
                 CURS ifresponsable = new CURS(ChaineConnexion);
                 ifresponsable.ReqSelect("SELECT * FROM responsable WHERE COL_MATRICULE='" + matuser + "';");
@@ -79,8 +70,12 @@ namespace gsb
                 {
                     _statutuser = "responsable";
                 }
+                else
+                {
+                    _statutuser = "visiteur";
+                }
                 ifresponsable.fermer();
-
+                
                 accueil home = new accueil();
                 home.Statutuser = this.Statutuser;
 
