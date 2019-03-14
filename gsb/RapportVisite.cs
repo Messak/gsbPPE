@@ -54,5 +54,10 @@ namespace gsb
         {
 
         }
+
+        private void BtnFermer_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
