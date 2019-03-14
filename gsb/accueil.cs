@@ -54,7 +54,6 @@ namespace gsb
         {
             ListerCompteRendu lister = new ListerCompteRendu();
             lister.Show();
-            this.Hide();
         }
     }
 }
