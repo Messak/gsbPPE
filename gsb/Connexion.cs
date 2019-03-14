@@ -22,6 +22,7 @@ namespace gsb
 
         public Connexion()
         {
+             ChaineConnexion = "server=51.68.64.197;user=gsbuser;password=gsbmdp;database=gsbcsharp";
             InitializeComponent();
 
         }
@@ -53,7 +54,7 @@ namespace gsb
             string inputmdp = inputMDP.Text.ToString();
 
             CURS conex = new CURS(ChaineConnexion);
-            conex.ReqSelect("SELECT COL_NOM, COL_DATEEMBAUCHE, COL_MATRICULE FROM collaborateur " +
+            conex.ReqSelect("SELECT COL_MATRICULE FROM collaborateur " +
                 "WHERE COL_NOM='" + inputid + "' " +
                 "AND DATE_FORMAT(COL_DATEEMBAUCHE, '%Y-%b-%d') = '" + inputmdp + "';");
 

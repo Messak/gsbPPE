@@ -49,5 +49,13 @@ namespace gsb
             redac.Show();
 
         }
+
+        private void buttonListerCompteRendu_Click(object sender, EventArgs e)
+        {
+            ListerCompteRendu lister = new ListerCompteRendu();
+            lister.Statutuser = Statutuser;
+            lister.Matuser = Matuser;
+            lister.Show();
+        }
     }
 }
