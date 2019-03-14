@@ -39,5 +39,12 @@ namespace gsb
             statututilisateur.Text = _statutuser;
 
         }
+
+        private void buttonListerCompteRendu_Click(object sender, EventArgs e)
+        {
+            ListerCompteRendu lister = new ListerCompteRendu();
+            lister.Show();
+            this.Hide();
+        }
     }
 }
