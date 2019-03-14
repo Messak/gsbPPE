@@ -13,7 +13,9 @@ namespace gsb
     public partial class accueil : Form
     {
         string _statutuser;
+        string _matuser;
         public string Statutuser { get => _statutuser; set => _statutuser = value; }
+        public string Matuser { get => _matuser; set => _matuser = value; }
 
         public accueil()
         {
@@ -37,6 +39,14 @@ namespace gsb
         private void accueil_Load(object sender, EventArgs e)
         {
             statututilisateur.Text = _statutuser;
+        }
+
+        private void buttonRedigerCompteRendu_Click(object sender, EventArgs e)
+        {
+            RapportVisite redac = new RapportVisite();
+            this.Close();
+            redac.Matuser = this.Matuser;
+            redac.Show();
 
         }
     }
