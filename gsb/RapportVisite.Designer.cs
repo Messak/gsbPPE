@@ -34,11 +34,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.labelDateRapport = new System.Windows.Forms.Label();
             this.datePickerRapport = new System.Windows.Forms.DateTimePicker();
-            this.comboBoxPraticien = new System.Windows.Forms.ComboBox();
+            this.comboBox_Practiciens = new System.Windows.Forms.ComboBox();
             this.comboBoxMotifVisite = new System.Windows.Forms.ComboBox();
             this.labelMotifVisite = new System.Windows.Forms.Label();
             this.labelBilan = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.toz = new System.Windows.Forms.Label();
+            this.btnsubmit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -69,11 +71,12 @@
             // textBoxNumRapport
             // 
             this.textBoxNumRapport.Location = new System.Drawing.Point(223, 79);
-            this.textBoxNumRapport.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxNumRapport.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxNumRapport.Name = "textBoxNumRapport";
             this.textBoxNumRapport.ReadOnly = true;
             this.textBoxNumRapport.Size = new System.Drawing.Size(132, 22);
             this.textBoxNumRapport.TabIndex = 2;
+            this.textBoxNumRapport.TextChanged += new System.EventHandler(this.textBoxNumRapport_TextChanged);
             // 
             // label2
             // 
@@ -100,25 +103,25 @@
             // datePickerRapport
             // 
             this.datePickerRapport.Location = new System.Drawing.Point(223, 162);
-            this.datePickerRapport.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.datePickerRapport.Margin = new System.Windows.Forms.Padding(4);
             this.datePickerRapport.Name = "datePickerRapport";
             this.datePickerRapport.Size = new System.Drawing.Size(265, 22);
             this.datePickerRapport.TabIndex = 6;
             // 
-            // comboBoxPraticien
+            // comboBox_Practiciens
             // 
-            this.comboBoxPraticien.FormattingEnabled = true;
-            this.comboBoxPraticien.Location = new System.Drawing.Point(223, 122);
-            this.comboBoxPraticien.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.comboBoxPraticien.Name = "comboBoxPraticien";
-            this.comboBoxPraticien.Size = new System.Drawing.Size(160, 24);
-            this.comboBoxPraticien.TabIndex = 7;
+            this.comboBox_Practiciens.FormattingEnabled = true;
+            this.comboBox_Practiciens.Location = new System.Drawing.Point(223, 122);
+            this.comboBox_Practiciens.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBox_Practiciens.Name = "comboBox_Practiciens";
+            this.comboBox_Practiciens.Size = new System.Drawing.Size(160, 24);
+            this.comboBox_Practiciens.TabIndex = 7;
             // 
             // comboBoxMotifVisite
             // 
             this.comboBoxMotifVisite.FormattingEnabled = true;
             this.comboBoxMotifVisite.Location = new System.Drawing.Point(223, 204);
-            this.comboBoxMotifVisite.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxMotifVisite.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxMotifVisite.Name = "comboBoxMotifVisite";
             this.comboBoxMotifVisite.Size = new System.Drawing.Size(160, 24);
             this.comboBoxMotifVisite.TabIndex = 9;
@@ -148,29 +151,48 @@
             // richTextBox1
             // 
             this.richTextBox1.Location = new System.Drawing.Point(223, 249);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.richTextBox1.Margin = new System.Windows.Forms.Padding(4);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(391, 195);
             this.richTextBox1.TabIndex = 11;
             this.richTextBox1.Text = "";
             // 
+            // toz
+            // 
+            this.toz.AutoSize = true;
+            this.toz.Location = new System.Drawing.Point(801, 177);
+            this.toz.Name = "toz";
+            this.toz.Size = new System.Drawing.Size(0, 17);
+            this.toz.TabIndex = 12;
+            // 
+            // btnsubmit
+            // 
+            this.btnsubmit.Location = new System.Drawing.Point(550, 670);
+            this.btnsubmit.Name = "btnsubmit";
+            this.btnsubmit.Size = new System.Drawing.Size(140, 65);
+            this.btnsubmit.TabIndex = 13;
+            this.btnsubmit.Text = "Valider";
+            this.btnsubmit.UseVisualStyleBackColor = true;
+            // 
             // RapportVisite
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.ClientSize = new System.Drawing.Size(1391, 747);
+            this.Controls.Add(this.btnsubmit);
+            this.Controls.Add(this.toz);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.labelBilan);
             this.Controls.Add(this.comboBoxMotifVisite);
             this.Controls.Add(this.labelMotifVisite);
-            this.Controls.Add(this.comboBoxPraticien);
+            this.Controls.Add(this.comboBox_Practiciens);
             this.Controls.Add(this.datePickerRapport);
             this.Controls.Add(this.labelDateRapport);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBoxNumRapport);
             this.Controls.Add(this.labelNumRapport);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "RapportVisite";
             this.Text = "Rapport de Visite";
             this.Load += new System.EventHandler(this.RapportVisite_Load);
@@ -187,10 +209,12 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label labelDateRapport;
         private System.Windows.Forms.DateTimePicker datePickerRapport;
-        private System.Windows.Forms.ComboBox comboBoxPraticien;
+        private System.Windows.Forms.ComboBox comboBox_Practiciens;
         private System.Windows.Forms.ComboBox comboBoxMotifVisite;
         private System.Windows.Forms.Label labelMotifVisite;
         private System.Windows.Forms.Label labelBilan;
         private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.Label toz;
+        private System.Windows.Forms.Button btnsubmit;
     }
 }

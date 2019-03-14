@@ -53,6 +53,7 @@
             // buttonCompteRendu
             // 
             this.buttonCompteRendu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+
             this.buttonCompteRendu.Location = new System.Drawing.Point(297, 103);
             this.buttonCompteRendu.Name = "buttonCompteRendu";
             this.buttonCompteRendu.Size = new System.Drawing.Size(180, 43);
@@ -104,6 +105,7 @@
             this.buttonRedigerCompteRendu.Text = "Rédiger un Compte Rendu";
             this.buttonRedigerCompteRendu.UseVisualStyleBackColor = true;
             this.buttonRedigerCompteRendu.Visible = false;
+            this.buttonRedigerCompteRendu.Click += new System.EventHandler(this.buttonRedigerCompteRendu_Click);
             // 
             // statututilisateur
             // 

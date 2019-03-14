@@ -14,13 +14,11 @@ namespace gsb
     public partial class Connexion : Form
     {
     string _statutuser="";
+        string matuser;
     public string Statutuser { get => _statutuser; set => _statutuser = value; }
-        string chaineConnexion;
-        public string ChaineConnexion
-        {
-            get { return chaineConnexion; }
-            set { chaineConnexion = value; }
-        }
+        public string Matuser { get => matuser; set => matuser = value; }
+        string ChaineConnexion = "server=localhost;user=root;database=gsbcsharp";
+
 
         public Connexion()
         {
@@ -62,7 +60,7 @@ namespace gsb
 
             if (!conex.Fin())
             {
-                string matuser = conex.champ("COL_MATRICULE").ToString();
+                 matuser = conex.champ("COL_MATRICULE").ToString();
 
                 CURS ifresponsable = new CURS(ChaineConnexion);
                 ifresponsable.ReqSelect("SELECT * FROM responsable WHERE COL_MATRICULE='" + matuser + "';");
@@ -78,6 +76,8 @@ namespace gsb
                 
                 accueil home = new accueil();
                 home.Statutuser = this.Statutuser;
+                home.Matuser = this.Matuser;
+
 
                 this.Hide();
                 home.Show();
