@@ -44,20 +44,19 @@
             this.labelMainTitle.BackColor = System.Drawing.SystemColors.Control;
             this.labelMainTitle.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelMainTitle.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.labelMainTitle.Location = new System.Drawing.Point(253, 33);
-            this.labelMainTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelMainTitle.Location = new System.Drawing.Point(190, 27);
             this.labelMainTitle.Name = "labelMainTitle";
-            this.labelMainTitle.Size = new System.Drawing.Size(482, 40);
+            this.labelMainTitle.Size = new System.Drawing.Size(394, 32);
             this.labelMainTitle.TabIndex = 0;
             this.labelMainTitle.Text = "Gestion des comptes rendus";
             // 
             // buttonCompteRendu
             // 
             this.buttonCompteRendu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCompteRendu.Location = new System.Drawing.Point(396, 127);
-            this.buttonCompteRendu.Margin = new System.Windows.Forms.Padding(4);
+
+            this.buttonCompteRendu.Location = new System.Drawing.Point(297, 103);
             this.buttonCompteRendu.Name = "buttonCompteRendu";
-            this.buttonCompteRendu.Size = new System.Drawing.Size(240, 53);
+            this.buttonCompteRendu.Size = new System.Drawing.Size(180, 43);
             this.buttonCompteRendu.TabIndex = 1;
             this.buttonCompteRendu.Text = "Compte Rendu";
             this.buttonCompteRendu.UseVisualStyleBackColor = true;
@@ -66,10 +65,9 @@
             // buttonMedicament
             // 
             this.buttonMedicament.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonMedicament.Location = new System.Drawing.Point(396, 220);
-            this.buttonMedicament.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonMedicament.Location = new System.Drawing.Point(297, 179);
             this.buttonMedicament.Name = "buttonMedicament";
-            this.buttonMedicament.Size = new System.Drawing.Size(240, 53);
+            this.buttonMedicament.Size = new System.Drawing.Size(180, 43);
             this.buttonMedicament.TabIndex = 2;
             this.buttonMedicament.Text = "Médicaments";
             this.buttonMedicament.UseVisualStyleBackColor = true;
@@ -77,10 +75,9 @@
             // buttonDeconnexion
             // 
             this.buttonDeconnexion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonDeconnexion.Location = new System.Drawing.Point(396, 313);
-            this.buttonDeconnexion.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonDeconnexion.Location = new System.Drawing.Point(297, 254);
             this.buttonDeconnexion.Name = "buttonDeconnexion";
-            this.buttonDeconnexion.Size = new System.Drawing.Size(240, 53);
+            this.buttonDeconnexion.Size = new System.Drawing.Size(180, 43);
             this.buttonDeconnexion.TabIndex = 3;
             this.buttonDeconnexion.Text = "Déconnexion";
             this.buttonDeconnexion.UseVisualStyleBackColor = true;
@@ -89,22 +86,21 @@
             // buttonListerCompteRendu
             // 
             this.buttonListerCompteRendu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonListerCompteRendu.Location = new System.Drawing.Point(261, 127);
-            this.buttonListerCompteRendu.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonListerCompteRendu.Location = new System.Drawing.Point(196, 103);
             this.buttonListerCompteRendu.Name = "buttonListerCompteRendu";
-            this.buttonListerCompteRendu.Size = new System.Drawing.Size(240, 53);
+            this.buttonListerCompteRendu.Size = new System.Drawing.Size(180, 43);
             this.buttonListerCompteRendu.TabIndex = 4;
             this.buttonListerCompteRendu.Text = "Lister les Comptes Rendus";
             this.buttonListerCompteRendu.UseVisualStyleBackColor = true;
             this.buttonListerCompteRendu.Visible = false;
+            this.buttonListerCompteRendu.Click += new System.EventHandler(this.buttonListerCompteRendu_Click);
             // 
             // buttonRedigerCompteRendu
             // 
             this.buttonRedigerCompteRendu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonRedigerCompteRendu.Location = new System.Drawing.Point(539, 127);
-            this.buttonRedigerCompteRendu.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonRedigerCompteRendu.Location = new System.Drawing.Point(404, 103);
             this.buttonRedigerCompteRendu.Name = "buttonRedigerCompteRendu";
-            this.buttonRedigerCompteRendu.Size = new System.Drawing.Size(240, 53);
+            this.buttonRedigerCompteRendu.Size = new System.Drawing.Size(180, 43);
             this.buttonRedigerCompteRendu.TabIndex = 5;
             this.buttonRedigerCompteRendu.Text = "Rédiger un Compte Rendu";
             this.buttonRedigerCompteRendu.UseVisualStyleBackColor = true;
@@ -114,25 +110,27 @@
             // statututilisateur
             // 
             this.statututilisateur.AutoSize = true;
-            this.statututilisateur.Location = new System.Drawing.Point(894, 9);
+            this.statututilisateur.Location = new System.Drawing.Point(670, 7);
+            this.statututilisateur.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.statututilisateur.Name = "statututilisateur";
-            this.statututilisateur.Size = new System.Drawing.Size(0, 17);
+            this.statututilisateur.Size = new System.Drawing.Size(0, 13);
             this.statututilisateur.TabIndex = 6;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(736, 9);
+            this.label1.Location = new System.Drawing.Point(552, 7);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(152, 17);
+            this.label1.Size = new System.Drawing.Size(116, 13);
             this.label1.TabIndex = 7;
             this.label1.Text = "Connecté en tant que :";
             // 
             // accueil
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1025, 443);
+            this.ClientSize = new System.Drawing.Size(769, 360);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.statututilisateur);
             this.Controls.Add(this.buttonRedigerCompteRendu);
@@ -141,7 +139,6 @@
             this.Controls.Add(this.buttonMedicament);
             this.Controls.Add(this.buttonCompteRendu);
             this.Controls.Add(this.labelMainTitle);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "accueil";
             this.Text = "Accueil";
             this.Load += new System.EventHandler(this.accueil_Load);
