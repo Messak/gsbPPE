@@ -41,6 +41,10 @@
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.toz = new System.Windows.Forms.Label();
             this.btnsubmit = new System.Windows.Forms.Button();
+            this.prdnewrdv = new System.Windows.Forms.Label();
+            this.ConfPract = new System.Windows.Forms.Label();
+            this.ConfLabo = new System.Windows.Forms.Label();
+            this.ConnaissancePract = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -153,7 +157,7 @@
             this.richTextBox1.Location = new System.Drawing.Point(223, 249);
             this.richTextBox1.Margin = new System.Windows.Forms.Padding(4);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(391, 195);
+            this.richTextBox1.Size = new System.Drawing.Size(265, 112);
             this.richTextBox1.TabIndex = 11;
             this.richTextBox1.Text = "";
             // 
@@ -174,11 +178,51 @@
             this.btnsubmit.Text = "Valider";
             this.btnsubmit.UseVisualStyleBackColor = true;
             // 
+            // prdnewrdv
+            // 
+            this.prdnewrdv.AutoSize = true;
+            this.prdnewrdv.Location = new System.Drawing.Point(612, 79);
+            this.prdnewrdv.Name = "prdnewrdv";
+            this.prdnewrdv.Size = new System.Drawing.Size(221, 17);
+            this.prdnewrdv.TabIndex = 14;
+            this.prdnewrdv.Text = "Prendre nouveau renddez-vous ?";
+            // 
+            // ConfPract
+            // 
+            this.ConfPract.AutoSize = true;
+            this.ConfPract.Location = new System.Drawing.Point(615, 122);
+            this.ConfPract.Name = "ConfPract";
+            this.ConfPract.Size = new System.Drawing.Size(156, 17);
+            this.ConfPract.TabIndex = 15;
+            this.ConfPract.Text = "Confiance practicien/10";
+            // 
+            // ConfLabo
+            // 
+            this.ConfLabo.AutoSize = true;
+            this.ConfLabo.Location = new System.Drawing.Point(615, 162);
+            this.ConfLabo.Name = "ConfLabo";
+            this.ConfLabo.Size = new System.Drawing.Size(127, 17);
+            this.ConfLabo.TabIndex = 16;
+            this.ConfLabo.Text = "Confiance Labo/10";
+            // 
+            // ConnaissancePract
+            // 
+            this.ConnaissancePract.AutoSize = true;
+            this.ConnaissancePract.Location = new System.Drawing.Point(615, 204);
+            this.ConnaissancePract.Name = "ConnaissancePract";
+            this.ConnaissancePract.Size = new System.Drawing.Size(163, 17);
+            this.ConnaissancePract.TabIndex = 17;
+            this.ConnaissancePract.Text = "Connaissance Practicien";
+            // 
             // RapportVisite
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1391, 747);
+            this.Controls.Add(this.ConnaissancePract);
+            this.Controls.Add(this.ConfLabo);
+            this.Controls.Add(this.ConfPract);
+            this.Controls.Add(this.prdnewrdv);
             this.Controls.Add(this.btnsubmit);
             this.Controls.Add(this.toz);
             this.Controls.Add(this.richTextBox1);
@@ -216,5 +260,9 @@
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Label toz;
         private System.Windows.Forms.Button btnsubmit;
+        private System.Windows.Forms.Label prdnewrdv;
+        private System.Windows.Forms.Label ConfPract;
+        private System.Windows.Forms.Label ConfLabo;
+        private System.Windows.Forms.Label ConnaissancePract;
     }
 }

@@ -44,7 +44,6 @@ namespace gsb
         private void buttonRedigerCompteRendu_Click(object sender, EventArgs e)
         {
             RapportVisite redac = new RapportVisite();
-            this.Close();
             redac.Matuser = this.Matuser;
             redac.Show();
 
