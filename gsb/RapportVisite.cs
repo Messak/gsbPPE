@@ -45,6 +45,16 @@ namespace gsb
             idrapp.fermer();
         }
 
+        /// <summary>
+        /// Surcharge pour permettre l'affichage d'un rapport et non la rédaction
+        /// </summary>
+        /// <param name="id">L'id du Rapport à affiché</param>
+        public RapportVisite(string id)
+        {
+            InitializeComponent();
+
+        }
+
         private void RapportVisite_Load(object sender, EventArgs e)
         {
             
