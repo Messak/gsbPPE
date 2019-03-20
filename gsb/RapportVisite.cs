@@ -14,7 +14,7 @@ namespace gsb
     {
         string _matuser;
         public string Matuser { get => _matuser; set => _matuser = value; }
-        string ChaineConnexion = "server=localhost;user=root;database=gsbcsharp";
+        string ChaineConnexion = "server=51.68.64.197;user=gsbuser;password=gsbmdp;database=gsbcsharp";
         private Dictionary<int, string> praticiens = new Dictionary<int, string>();
 
         public RapportVisite()
@@ -51,6 +51,21 @@ namespace gsb
         }
 
         private void textBoxNumRapport_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnFermer_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

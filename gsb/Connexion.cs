@@ -17,14 +17,12 @@ namespace gsb
         string matuser;
     public string Statutuser { get => _statutuser; set => _statutuser = value; }
         public string Matuser { get => matuser; set => matuser = value; }
-        string ChaineConnexion = "server=localhost;user=root;database=gsbcsharp";
+        string ChaineConnexion = "server=51.68.64.197;user=gsbuser;password=gsbmdp;database=gsbcsharp";
 
 
         public Connexion()
         {
-             ChaineConnexion = "server=51.68.64.197;user=gsbuser;password=gsbmdp;database=gsbcsharp";
             InitializeComponent();
-
         }
        
         private void Form1_Load(object sender, EventArgs e)
