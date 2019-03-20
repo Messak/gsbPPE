@@ -14,7 +14,7 @@ namespace gsb
     {
         string _matuser;
         public string Matuser { get => _matuser; set => _matuser = value; }
-        string ChaineConnexion = "server=localhost;user=root;database=gsbcsharp";
+        string ChaineConnexion = "server=51.68.64.197;user=gsbuser;password=gsbmdp;database=gsbcsharp";
         private Dictionary<int, string> praticiens = new Dictionary<int, string>();
 
         public RapportVisite()
@@ -43,6 +43,16 @@ namespace gsb
                 textBoxNumRapport.Text = idrap.ToString();
             }
             idrapp.fermer();
+        }
+
+        /// <summary>
+        /// Surcharge pour permettre l'affichage d'un rapport et non la rédaction
+        /// </summary>
+        /// <param name="id">L'id du Rapport à affiché</param>
+        public RapportVisite(string id)
+        {
+            InitializeComponent();
+
         }
 
         private void RapportVisite_Load(object sender, EventArgs e)

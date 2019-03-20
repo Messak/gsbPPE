@@ -53,8 +53,9 @@ namespace gsb
         private void buttonListerCompteRendu_Click(object sender, EventArgs e)
         {
             ListerCompteRendu lister = new ListerCompteRendu();
+            lister.Statutuser1 = _statutuser;
+            lister.Matuser1 = _matuser;
             lister.Show();
-            this.Hide();
         }
     }
 }

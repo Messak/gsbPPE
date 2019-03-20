@@ -31,8 +31,6 @@
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.NumRapport = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rapDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.praticienNom = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -41,9 +39,7 @@
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.NumRapport,
-            this.rapDate,
-            this.Col,
-            this.praticienNom});
+            this.rapDate});
             this.dataGridView.Location = new System.Drawing.Point(24, 27);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.Size = new System.Drawing.Size(745, 389);
@@ -59,16 +55,6 @@
             // 
             this.rapDate.HeaderText = "Date";
             this.rapDate.Name = "rapDate";
-            // 
-            // Col
-            // 
-            this.Col.HeaderText = "Collaborateur";
-            this.Col.Name = "Col";
-            // 
-            // praticienNom
-            // 
-            this.praticienNom.HeaderText = "Praticien";
-            this.praticienNom.Name = "praticienNom";
             // 
             // ListerCompteRendu
             // 
@@ -89,7 +75,5 @@
         private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn NumRapport;
         private System.Windows.Forms.DataGridViewTextBoxColumn rapDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Col;
-        private System.Windows.Forms.DataGridViewTextBoxColumn praticienNom;
     }
 }
