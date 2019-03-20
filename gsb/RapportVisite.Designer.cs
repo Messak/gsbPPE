@@ -146,7 +146,7 @@
             "Baisse activité ",
             "Périodicité",
             "Rapport Annuel"});
-            this.comboBoxMotifVisite.Location = new System.Drawing.Point(223, 326);
+            this.comboBoxMotifVisite.Location = new System.Drawing.Point(223, 296);
             this.comboBoxMotifVisite.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxMotifVisite.Name = "comboBoxMotifVisite";
             this.comboBoxMotifVisite.Size = new System.Drawing.Size(160, 24);
@@ -156,7 +156,7 @@
             // 
             this.labelMotifVisite.AutoSize = true;
             this.labelMotifVisite.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMotifVisite.Location = new System.Drawing.Point(36, 328);
+            this.labelMotifVisite.Location = new System.Drawing.Point(36, 298);
             this.labelMotifVisite.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelMotifVisite.Name = "labelMotifVisite";
             this.labelMotifVisite.Size = new System.Drawing.Size(107, 25);
@@ -199,6 +199,7 @@
             this.Btnsubmit.TabIndex = 13;
             this.Btnsubmit.Text = "Valider";
             this.Btnsubmit.UseVisualStyleBackColor = true;
+            this.Btnsubmit.Click += new System.EventHandler(this.Btnsubmit_Click);
             // 
             // prdnewrdv
             // 
@@ -352,12 +353,12 @@
             // 
             this.LabelDateProchaineVisite.AutoSize = true;
             this.LabelDateProchaineVisite.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelDateProchaineVisite.Location = new System.Drawing.Point(22, 224);
+            this.LabelDateProchaineVisite.Location = new System.Drawing.Point(36, 224);
             this.LabelDateProchaineVisite.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LabelDateProchaineVisite.Name = "LabelDateProchaineVisite";
-            this.LabelDateProchaineVisite.Size = new System.Drawing.Size(193, 25);
+            this.LabelDateProchaineVisite.Size = new System.Drawing.Size(153, 25);
             this.LabelDateProchaineVisite.TabIndex = 27;
-            this.LabelDateProchaineVisite.Text = "Date prochaine visite";
+            this.LabelDateProchaineVisite.Text = "Prochaine Visite";
             // 
             // dataGridView_echantillonOffert
             // 
@@ -366,11 +367,11 @@
             this.dataGridView_echantillonOffert.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewComboBoxColumn1,
             this.dataGridViewTextBoxColumn1});
-            this.dataGridView_echantillonOffert.Location = new System.Drawing.Point(586, 313);
+            this.dataGridView_echantillonOffert.Location = new System.Drawing.Point(543, 313);
             this.dataGridView_echantillonOffert.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView_echantillonOffert.Name = "dataGridView_echantillonOffert";
             this.dataGridView_echantillonOffert.RowTemplate.Height = 24;
-            this.dataGridView_echantillonOffert.Size = new System.Drawing.Size(247, 185);
+            this.dataGridView_echantillonOffert.Size = new System.Drawing.Size(350, 185);
             this.dataGridView_echantillonOffert.TabIndex = 44;
             // 
             // dataGridViewComboBoxColumn1
@@ -396,7 +397,7 @@
             this.dataGridView_echantillonPresente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView_echantillonPresente.Name = "dataGridView_echantillonPresente";
             this.dataGridView_echantillonPresente.RowTemplate.Height = 24;
-            this.dataGridView_echantillonPresente.Size = new System.Drawing.Size(252, 185);
+            this.dataGridView_echantillonPresente.Size = new System.Drawing.Size(350, 185);
             this.dataGridView_echantillonPresente.TabIndex = 45;
             // 
             // Medicaments
