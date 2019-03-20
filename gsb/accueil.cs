@@ -44,7 +44,6 @@ namespace gsb
         private void buttonRedigerCompteRendu_Click(object sender, EventArgs e)
         {
             RapportVisite redac = new RapportVisite();
-            this.Close();
             redac.Matuser = this.Matuser;
             redac.Show();
 
@@ -53,8 +52,8 @@ namespace gsb
         private void buttonListerCompteRendu_Click(object sender, EventArgs e)
         {
             ListerCompteRendu lister = new ListerCompteRendu();
-            lister.Statutuser = Statutuser;
-            lister.Matuser = Matuser;
+            lister.Statutuser1 = _statutuser;
+            lister.Matuser1 = _matuser;
             lister.Show();
         }
     }
