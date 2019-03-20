@@ -40,22 +40,28 @@
             this.labelBilan = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.toz = new System.Windows.Forms.Label();
-            this.btnsubmit = new System.Windows.Forms.Button();
+            this.Btnsubmit = new System.Windows.Forms.Button();
             this.prdnewrdv = new System.Windows.Forms.Label();
             this.ConfPract = new System.Windows.Forms.Label();
             this.ConfLabo = new System.Windows.Forms.Label();
             this.ConnaissancePract = new System.Windows.Forms.Label();
             this.BtnFermer = new System.Windows.Forms.Button();
             this.LabelOffreechantillons = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.Labeloffreechantillions = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.comboboxrdv = new System.Windows.Forms.ComboBox();
+            this.comboBoxconfpract = new System.Windows.Forms.ComboBox();
+            this.comboBoxConfLab = new System.Windows.Forms.ComboBox();
+            this.comboBoxConnaissancepract = new System.Windows.Forms.ComboBox();
+            this.datePickerProchainevisite = new System.Windows.Forms.DateTimePicker();
+            this.LabelDateProchaineVisite = new System.Windows.Forms.Label();
+            this.dataGridView_echantillonOffert = new System.Windows.Forms.DataGridView();
+            this.dataGridViewComboBoxColumn1 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridView_echantillonPresente = new System.Windows.Forms.DataGridView();
+            this.Medicaments = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_echantillonOffert)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_echantillonPresente)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -135,7 +141,12 @@
             // comboBoxMotifVisite
             // 
             this.comboBoxMotifVisite.FormattingEnabled = true;
-            this.comboBoxMotifVisite.Location = new System.Drawing.Point(223, 204);
+            this.comboBoxMotifVisite.Items.AddRange(new object[] {
+            "Actualisation annuelle",
+            "Baisse activité ",
+            "Périodicité",
+            "Rapport Annuel"});
+            this.comboBoxMotifVisite.Location = new System.Drawing.Point(223, 326);
             this.comboBoxMotifVisite.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxMotifVisite.Name = "comboBoxMotifVisite";
             this.comboBoxMotifVisite.Size = new System.Drawing.Size(160, 24);
@@ -145,7 +156,7 @@
             // 
             this.labelMotifVisite.AutoSize = true;
             this.labelMotifVisite.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMotifVisite.Location = new System.Drawing.Point(36, 206);
+            this.labelMotifVisite.Location = new System.Drawing.Point(36, 328);
             this.labelMotifVisite.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelMotifVisite.Name = "labelMotifVisite";
             this.labelMotifVisite.Size = new System.Drawing.Size(107, 25);
@@ -156,7 +167,7 @@
             // 
             this.labelBilan.AutoSize = true;
             this.labelBilan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelBilan.Location = new System.Drawing.Point(36, 249);
+            this.labelBilan.Location = new System.Drawing.Point(36, 371);
             this.labelBilan.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelBilan.Name = "labelBilan";
             this.labelBilan.Size = new System.Drawing.Size(69, 25);
@@ -165,7 +176,7 @@
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(223, 249);
+            this.richTextBox1.Location = new System.Drawing.Point(223, 371);
             this.richTextBox1.Margin = new System.Windows.Forms.Padding(4);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(265, 112);
@@ -180,14 +191,14 @@
             this.toz.Size = new System.Drawing.Size(0, 17);
             this.toz.TabIndex = 12;
             // 
-            // btnsubmit
+            // Btnsubmit
             // 
-            this.btnsubmit.Location = new System.Drawing.Point(521, 544);
-            this.btnsubmit.Name = "btnsubmit";
-            this.btnsubmit.Size = new System.Drawing.Size(140, 65);
-            this.btnsubmit.TabIndex = 13;
-            this.btnsubmit.Text = "Valider";
-            this.btnsubmit.UseVisualStyleBackColor = true;
+            this.Btnsubmit.Location = new System.Drawing.Point(521, 544);
+            this.Btnsubmit.Name = "Btnsubmit";
+            this.Btnsubmit.Size = new System.Drawing.Size(140, 65);
+            this.Btnsubmit.TabIndex = 13;
+            this.Btnsubmit.Text = "Valider";
+            this.Btnsubmit.UseVisualStyleBackColor = true;
             // 
             // prdnewrdv
             // 
@@ -244,24 +255,6 @@
             this.LabelOffreechantillons.TabIndex = 19;
             this.LabelOffreechantillons.Text = "Offre échantillons offerts";
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(593, 298);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
-            this.dataGridView1.TabIndex = 20;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(987, 298);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(240, 150);
-            this.dataGridView2.TabIndex = 22;
-            // 
             // Labeloffreechantillions
             // 
             this.Labeloffreechantillions.AutoSize = true;
@@ -271,57 +264,174 @@
             this.Labeloffreechantillions.TabIndex = 21;
             this.Labeloffreechantillions.Text = "Offre échantillons présentés";
             // 
-            // comboBox1
+            // comboboxrdv
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(896, 79);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
-            this.comboBox1.TabIndex = 23;
+            this.comboboxrdv.FormattingEnabled = true;
+            this.comboboxrdv.Items.AddRange(new object[] {
+            "Non",
+            "Oui"});
+            this.comboboxrdv.Location = new System.Drawing.Point(896, 79);
+            this.comboboxrdv.Name = "comboboxrdv";
+            this.comboboxrdv.Size = new System.Drawing.Size(121, 24);
+            this.comboboxrdv.TabIndex = 23;
             // 
-            // comboBox2
+            // comboBoxconfpract
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(896, 122);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 24);
-            this.comboBox2.TabIndex = 24;
+            this.comboBoxconfpract.FormattingEnabled = true;
+            this.comboBoxconfpract.Items.AddRange(new object[] {
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "Aucune évaluation"});
+            this.comboBoxconfpract.Location = new System.Drawing.Point(896, 122);
+            this.comboBoxconfpract.Name = "comboBoxconfpract";
+            this.comboBoxconfpract.Size = new System.Drawing.Size(121, 24);
+            this.comboBoxconfpract.TabIndex = 24;
+            this.comboBoxconfpract.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
-            // comboBox3
+            // comboBoxConfLab
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(896, 162);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 24);
-            this.comboBox3.TabIndex = 25;
+            this.comboBoxConfLab.FormattingEnabled = true;
+            this.comboBoxConfLab.Items.AddRange(new object[] {
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "Aucune évaluation"});
+            this.comboBoxConfLab.Location = new System.Drawing.Point(896, 162);
+            this.comboBoxConfLab.Name = "comboBoxConfLab";
+            this.comboBoxConfLab.Size = new System.Drawing.Size(121, 24);
+            this.comboBoxConfLab.TabIndex = 25;
+            this.comboBoxConfLab.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
             // 
-            // comboBox4
+            // comboBoxConnaissancepract
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(896, 204);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(121, 24);
-            this.comboBox4.TabIndex = 26;
+            this.comboBoxConnaissancepract.FormattingEnabled = true;
+            this.comboBoxConnaissancepract.Items.AddRange(new object[] {
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "Aucune évaluation"});
+            this.comboBoxConnaissancepract.Location = new System.Drawing.Point(896, 204);
+            this.comboBoxConnaissancepract.Name = "comboBoxConnaissancepract";
+            this.comboBoxConnaissancepract.Size = new System.Drawing.Size(121, 24);
+            this.comboBoxConnaissancepract.TabIndex = 26;
+            // 
+            // datePickerProchainevisite
+            // 
+            this.datePickerProchainevisite.Location = new System.Drawing.Point(223, 224);
+            this.datePickerProchainevisite.Margin = new System.Windows.Forms.Padding(4);
+            this.datePickerProchainevisite.Name = "datePickerProchainevisite";
+            this.datePickerProchainevisite.Size = new System.Drawing.Size(265, 22);
+            this.datePickerProchainevisite.TabIndex = 28;
+            // 
+            // LabelDateProchaineVisite
+            // 
+            this.LabelDateProchaineVisite.AutoSize = true;
+            this.LabelDateProchaineVisite.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelDateProchaineVisite.Location = new System.Drawing.Point(22, 224);
+            this.LabelDateProchaineVisite.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LabelDateProchaineVisite.Name = "LabelDateProchaineVisite";
+            this.LabelDateProchaineVisite.Size = new System.Drawing.Size(193, 25);
+            this.LabelDateProchaineVisite.TabIndex = 27;
+            this.LabelDateProchaineVisite.Text = "Date prochaine visite";
+            // 
+            // dataGridView_echantillonOffert
+            // 
+            this.dataGridView_echantillonOffert.AllowUserToDeleteRows = false;
+            this.dataGridView_echantillonOffert.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_echantillonOffert.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewComboBoxColumn1,
+            this.dataGridViewTextBoxColumn1});
+            this.dataGridView_echantillonOffert.Location = new System.Drawing.Point(586, 313);
+            this.dataGridView_echantillonOffert.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridView_echantillonOffert.Name = "dataGridView_echantillonOffert";
+            this.dataGridView_echantillonOffert.RowTemplate.Height = 24;
+            this.dataGridView_echantillonOffert.Size = new System.Drawing.Size(247, 185);
+            this.dataGridView_echantillonOffert.TabIndex = 44;
+            // 
+            // dataGridViewComboBoxColumn1
+            // 
+            this.dataGridViewComboBoxColumn1.Frozen = true;
+            this.dataGridViewComboBoxColumn1.HeaderText = "Médicament";
+            this.dataGridViewComboBoxColumn1.Name = "dataGridViewComboBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "Nombre";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // dataGridView_echantillonPresente
+            // 
+            this.dataGridView_echantillonPresente.AllowUserToDeleteRows = false;
+            this.dataGridView_echantillonPresente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_echantillonPresente.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Medicaments,
+            this.Nombre});
+            this.dataGridView_echantillonPresente.Location = new System.Drawing.Point(951, 313);
+            this.dataGridView_echantillonPresente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridView_echantillonPresente.Name = "dataGridView_echantillonPresente";
+            this.dataGridView_echantillonPresente.RowTemplate.Height = 24;
+            this.dataGridView_echantillonPresente.Size = new System.Drawing.Size(252, 185);
+            this.dataGridView_echantillonPresente.TabIndex = 45;
+            // 
+            // Medicaments
+            // 
+            this.Medicaments.Frozen = true;
+            this.Medicaments.HeaderText = "Médicament";
+            this.Medicaments.Name = "Medicaments";
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // RapportVisite
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1391, 617);
-            this.Controls.Add(this.comboBox4);
-            this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.dataGridView_echantillonPresente);
+            this.Controls.Add(this.dataGridView_echantillonOffert);
+            this.Controls.Add(this.datePickerProchainevisite);
+            this.Controls.Add(this.LabelDateProchaineVisite);
+            this.Controls.Add(this.comboBoxConnaissancepract);
+            this.Controls.Add(this.comboBoxConfLab);
+            this.Controls.Add(this.comboBoxconfpract);
+            this.Controls.Add(this.comboboxrdv);
             this.Controls.Add(this.Labeloffreechantillions);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.LabelOffreechantillons);
             this.Controls.Add(this.BtnFermer);
             this.Controls.Add(this.ConnaissancePract);
             this.Controls.Add(this.ConfLabo);
             this.Controls.Add(this.ConfPract);
             this.Controls.Add(this.prdnewrdv);
-            this.Controls.Add(this.btnsubmit);
+            this.Controls.Add(this.Btnsubmit);
             this.Controls.Add(this.toz);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.labelBilan);
@@ -338,8 +448,8 @@
             this.Name = "RapportVisite";
             this.Text = "Rapport de Visite";
             this.Load += new System.EventHandler(this.RapportVisite_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_echantillonOffert)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_echantillonPresente)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -359,19 +469,25 @@
         private System.Windows.Forms.Label labelBilan;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Label toz;
-        private System.Windows.Forms.Button btnsubmit;
+        private System.Windows.Forms.Button Btnsubmit;
         private System.Windows.Forms.Label prdnewrdv;
         private System.Windows.Forms.Label ConfPract;
         private System.Windows.Forms.Label ConfLabo;
         private System.Windows.Forms.Label ConnaissancePract;
         private System.Windows.Forms.Button BtnFermer;
         private System.Windows.Forms.Label LabelOffreechantillons;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Label Labeloffreechantillions;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.ComboBox comboboxrdv;
+        private System.Windows.Forms.ComboBox comboBoxconfpract;
+        private System.Windows.Forms.ComboBox comboBoxConfLab;
+        private System.Windows.Forms.ComboBox comboBoxConnaissancepract;
+        private System.Windows.Forms.DateTimePicker datePickerProchainevisite;
+        private System.Windows.Forms.Label LabelDateProchaineVisite;
+        private System.Windows.Forms.DataGridView dataGridView_echantillonOffert;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewComboBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridView dataGridView_echantillonPresente;
+        private System.Windows.Forms.DataGridViewComboBoxColumn Medicaments;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
     }
 }

@@ -59,5 +59,15 @@ namespace gsb
         {
             this.Close();
         }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

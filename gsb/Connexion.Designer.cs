@@ -66,9 +66,9 @@
             this.inputID.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.inputID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.inputID.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.inputID.Location = new System.Drawing.Point(249, 202);
+            this.inputID.Location = new System.Drawing.Point(224, 202);
             this.inputID.Name = "inputID";
-            this.inputID.Size = new System.Drawing.Size(100, 30);
+            this.inputID.Size = new System.Drawing.Size(143, 30);
             this.inputID.TabIndex = 2;
             this.inputID.TextChanged += new System.EventHandler(this.inputID_TextChanged);
             // 
@@ -76,9 +76,9 @@
             // 
             this.inputMDP.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.inputMDP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.inputMDP.Location = new System.Drawing.Point(431, 202);
+            this.inputMDP.Location = new System.Drawing.Point(410, 202);
             this.inputMDP.Name = "inputMDP";
-            this.inputMDP.Size = new System.Drawing.Size(100, 30);
+            this.inputMDP.Size = new System.Drawing.Size(143, 30);
             this.inputMDP.TabIndex = 3;
             this.inputMDP.TextChanged += new System.EventHandler(this.inputMDP_TextChanged);
             // 
