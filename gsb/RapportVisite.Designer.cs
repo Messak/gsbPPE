@@ -32,14 +32,13 @@
             this.labelNumRapport = new System.Windows.Forms.Label();
             this.textBoxNumRapport = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.labelDateRapport = new System.Windows.Forms.Label();
-            this.datePickerRapport = new System.Windows.Forms.DateTimePicker();
+            this.labelDateVisite = new System.Windows.Forms.Label();
+            this.datePickerVisite = new System.Windows.Forms.DateTimePicker();
             this.comboBox_Practiciens = new System.Windows.Forms.ComboBox();
             this.comboBoxMotifVisite = new System.Windows.Forms.ComboBox();
             this.labelMotifVisite = new System.Windows.Forms.Label();
             this.labelBilan = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.toz = new System.Windows.Forms.Label();
+            this.richTextBoxBilan = new System.Windows.Forms.RichTextBox();
             this.Btnsubmit = new System.Windows.Forms.Button();
             this.prdnewrdv = new System.Windows.Forms.Label();
             this.ConfPract = new System.Windows.Forms.Label();
@@ -110,24 +109,24 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Praticien";
             // 
-            // labelDateRapport
+            // labelDateVisite
             // 
-            this.labelDateRapport.AutoSize = true;
-            this.labelDateRapport.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDateRapport.Location = new System.Drawing.Point(36, 162);
-            this.labelDateRapport.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelDateRapport.Name = "labelDateRapport";
-            this.labelDateRapport.Size = new System.Drawing.Size(126, 25);
-            this.labelDateRapport.TabIndex = 5;
-            this.labelDateRapport.Text = "Date Rapport";
+            this.labelDateVisite.AutoSize = true;
+            this.labelDateVisite.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDateVisite.Location = new System.Drawing.Point(610, 79);
+            this.labelDateVisite.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelDateVisite.Name = "labelDateVisite";
+            this.labelDateVisite.Size = new System.Drawing.Size(106, 25);
+            this.labelDateVisite.TabIndex = 5;
+            this.labelDateVisite.Text = "Date Visite";
             // 
-            // datePickerRapport
+            // datePickerVisite
             // 
-            this.datePickerRapport.Location = new System.Drawing.Point(223, 162);
-            this.datePickerRapport.Margin = new System.Windows.Forms.Padding(4);
-            this.datePickerRapport.Name = "datePickerRapport";
-            this.datePickerRapport.Size = new System.Drawing.Size(265, 22);
-            this.datePickerRapport.TabIndex = 6;
+            this.datePickerVisite.Location = new System.Drawing.Point(896, 81);
+            this.datePickerVisite.Margin = new System.Windows.Forms.Padding(4);
+            this.datePickerVisite.Name = "datePickerVisite";
+            this.datePickerVisite.Size = new System.Drawing.Size(265, 22);
+            this.datePickerVisite.TabIndex = 6;
             // 
             // comboBox_Practiciens
             // 
@@ -146,7 +145,7 @@
             "Baisse activité ",
             "Périodicité",
             "Rapport Annuel"});
-            this.comboBoxMotifVisite.Location = new System.Drawing.Point(223, 326);
+            this.comboBoxMotifVisite.Location = new System.Drawing.Point(222, 181);
             this.comboBoxMotifVisite.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxMotifVisite.Name = "comboBoxMotifVisite";
             this.comboBoxMotifVisite.Size = new System.Drawing.Size(160, 24);
@@ -156,7 +155,7 @@
             // 
             this.labelMotifVisite.AutoSize = true;
             this.labelMotifVisite.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMotifVisite.Location = new System.Drawing.Point(36, 328);
+            this.labelMotifVisite.Location = new System.Drawing.Point(35, 183);
             this.labelMotifVisite.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelMotifVisite.Name = "labelMotifVisite";
             this.labelMotifVisite.Size = new System.Drawing.Size(107, 25);
@@ -167,29 +166,21 @@
             // 
             this.labelBilan.AutoSize = true;
             this.labelBilan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelBilan.Location = new System.Drawing.Point(36, 371);
+            this.labelBilan.Location = new System.Drawing.Point(36, 235);
             this.labelBilan.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelBilan.Name = "labelBilan";
             this.labelBilan.Size = new System.Drawing.Size(69, 25);
             this.labelBilan.TabIndex = 10;
             this.labelBilan.Text = "BILAN";
             // 
-            // richTextBox1
+            // richTextBoxBilan
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(223, 371);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(265, 112);
-            this.richTextBox1.TabIndex = 11;
-            this.richTextBox1.Text = "";
-            // 
-            // toz
-            // 
-            this.toz.AutoSize = true;
-            this.toz.Location = new System.Drawing.Point(801, 177);
-            this.toz.Name = "toz";
-            this.toz.Size = new System.Drawing.Size(0, 17);
-            this.toz.TabIndex = 12;
+            this.richTextBoxBilan.Location = new System.Drawing.Point(223, 235);
+            this.richTextBoxBilan.Margin = new System.Windows.Forms.Padding(4);
+            this.richTextBoxBilan.Name = "richTextBoxBilan";
+            this.richTextBoxBilan.Size = new System.Drawing.Size(265, 112);
+            this.richTextBoxBilan.TabIndex = 11;
+            this.richTextBoxBilan.Text = "";
             // 
             // Btnsubmit
             // 
@@ -199,40 +190,45 @@
             this.Btnsubmit.TabIndex = 13;
             this.Btnsubmit.Text = "Valider";
             this.Btnsubmit.UseVisualStyleBackColor = true;
+            this.Btnsubmit.Click += new System.EventHandler(this.Btnsubmit_Click);
             // 
             // prdnewrdv
             // 
             this.prdnewrdv.AutoSize = true;
-            this.prdnewrdv.Location = new System.Drawing.Point(612, 79);
+            this.prdnewrdv.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.prdnewrdv.Location = new System.Drawing.Point(612, 129);
             this.prdnewrdv.Name = "prdnewrdv";
-            this.prdnewrdv.Size = new System.Drawing.Size(221, 17);
+            this.prdnewrdv.Size = new System.Drawing.Size(303, 25);
             this.prdnewrdv.TabIndex = 14;
             this.prdnewrdv.Text = "Prendre nouveau renddez-vous ?";
             // 
             // ConfPract
             // 
             this.ConfPract.AutoSize = true;
-            this.ConfPract.Location = new System.Drawing.Point(615, 122);
+            this.ConfPract.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.ConfPract.Location = new System.Drawing.Point(612, 217);
             this.ConfPract.Name = "ConfPract";
-            this.ConfPract.Size = new System.Drawing.Size(156, 17);
+            this.ConfPract.Size = new System.Drawing.Size(217, 25);
             this.ConfPract.TabIndex = 15;
             this.ConfPract.Text = "Confiance practicien/10";
             // 
             // ConfLabo
             // 
             this.ConfLabo.AutoSize = true;
-            this.ConfLabo.Location = new System.Drawing.Point(615, 162);
+            this.ConfLabo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.ConfLabo.Location = new System.Drawing.Point(612, 266);
             this.ConfLabo.Name = "ConfLabo";
-            this.ConfLabo.Size = new System.Drawing.Size(127, 17);
+            this.ConfLabo.Size = new System.Drawing.Size(178, 25);
             this.ConfLabo.TabIndex = 16;
             this.ConfLabo.Text = "Confiance Labo/10";
             // 
             // ConnaissancePract
             // 
             this.ConnaissancePract.AutoSize = true;
-            this.ConnaissancePract.Location = new System.Drawing.Point(615, 204);
+            this.ConnaissancePract.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.ConnaissancePract.Location = new System.Drawing.Point(612, 312);
             this.ConnaissancePract.Name = "ConnaissancePract";
-            this.ConnaissancePract.Size = new System.Drawing.Size(163, 17);
+            this.ConnaissancePract.Size = new System.Drawing.Size(228, 25);
             this.ConnaissancePract.TabIndex = 17;
             this.ConnaissancePract.Text = "Connaissance Practicien";
             // 
@@ -249,7 +245,7 @@
             // LabelOffreechantillons
             // 
             this.LabelOffreechantillons.AutoSize = true;
-            this.LabelOffreechantillons.Location = new System.Drawing.Point(629, 267);
+            this.LabelOffreechantillons.Location = new System.Drawing.Point(166, 392);
             this.LabelOffreechantillons.Name = "LabelOffreechantillons";
             this.LabelOffreechantillons.Size = new System.Drawing.Size(163, 17);
             this.LabelOffreechantillons.TabIndex = 19;
@@ -258,7 +254,7 @@
             // Labeloffreechantillions
             // 
             this.Labeloffreechantillions.AutoSize = true;
-            this.Labeloffreechantillions.Location = new System.Drawing.Point(1017, 267);
+            this.Labeloffreechantillions.Location = new System.Drawing.Point(1038, 392);
             this.Labeloffreechantillions.Name = "Labeloffreechantillions";
             this.Labeloffreechantillions.Size = new System.Drawing.Size(186, 17);
             this.Labeloffreechantillions.TabIndex = 21;
@@ -266,14 +262,16 @@
             // 
             // comboboxrdv
             // 
+            this.comboboxrdv.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboboxrdv.FormattingEnabled = true;
             this.comboboxrdv.Items.AddRange(new object[] {
             "Non",
             "Oui"});
-            this.comboboxrdv.Location = new System.Drawing.Point(896, 79);
+            this.comboboxrdv.Location = new System.Drawing.Point(896, 129);
             this.comboboxrdv.Name = "comboboxrdv";
             this.comboboxrdv.Size = new System.Drawing.Size(121, 24);
             this.comboboxrdv.TabIndex = 23;
+            this.comboboxrdv.SelectedIndexChanged += new System.EventHandler(this.comboboxrdv_SelectedIndexChanged);
             // 
             // comboBoxconfpract
             // 
@@ -291,7 +289,7 @@
             "9",
             "10",
             "Aucune évaluation"});
-            this.comboBoxconfpract.Location = new System.Drawing.Point(896, 122);
+            this.comboBoxconfpract.Location = new System.Drawing.Point(896, 217);
             this.comboBoxconfpract.Name = "comboBoxconfpract";
             this.comboBoxconfpract.Size = new System.Drawing.Size(121, 24);
             this.comboBoxconfpract.TabIndex = 24;
@@ -313,7 +311,7 @@
             "9",
             "10",
             "Aucune évaluation"});
-            this.comboBoxConfLab.Location = new System.Drawing.Point(896, 162);
+            this.comboBoxConfLab.Location = new System.Drawing.Point(896, 266);
             this.comboBoxConfLab.Name = "comboBoxConfLab";
             this.comboBoxConfLab.Size = new System.Drawing.Size(121, 24);
             this.comboBoxConfLab.TabIndex = 25;
@@ -335,29 +333,30 @@
             "9",
             "10",
             "Aucune évaluation"});
-            this.comboBoxConnaissancepract.Location = new System.Drawing.Point(896, 204);
+            this.comboBoxConnaissancepract.Location = new System.Drawing.Point(896, 312);
             this.comboBoxConnaissancepract.Name = "comboBoxConnaissancepract";
             this.comboBoxConnaissancepract.Size = new System.Drawing.Size(121, 24);
             this.comboBoxConnaissancepract.TabIndex = 26;
             // 
             // datePickerProchainevisite
             // 
-            this.datePickerProchainevisite.Location = new System.Drawing.Point(223, 224);
+            this.datePickerProchainevisite.Location = new System.Drawing.Point(896, 170);
             this.datePickerProchainevisite.Margin = new System.Windows.Forms.Padding(4);
             this.datePickerProchainevisite.Name = "datePickerProchainevisite";
             this.datePickerProchainevisite.Size = new System.Drawing.Size(265, 22);
             this.datePickerProchainevisite.TabIndex = 28;
+            this.datePickerProchainevisite.Visible = false;
             // 
             // LabelDateProchaineVisite
             // 
             this.LabelDateProchaineVisite.AutoSize = true;
-            this.LabelDateProchaineVisite.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelDateProchaineVisite.Location = new System.Drawing.Point(22, 224);
+            this.LabelDateProchaineVisite.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.LabelDateProchaineVisite.Location = new System.Drawing.Point(612, 173);
             this.LabelDateProchaineVisite.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LabelDateProchaineVisite.Name = "LabelDateProchaineVisite";
-            this.LabelDateProchaineVisite.Size = new System.Drawing.Size(193, 25);
+            this.LabelDateProchaineVisite.Size = new System.Drawing.Size(153, 25);
             this.LabelDateProchaineVisite.TabIndex = 27;
-            this.LabelDateProchaineVisite.Text = "Date prochaine visite";
+            this.LabelDateProchaineVisite.Text = "Prochaine Visite";
             // 
             // dataGridView_echantillonOffert
             // 
@@ -366,11 +365,11 @@
             this.dataGridView_echantillonOffert.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewComboBoxColumn1,
             this.dataGridViewTextBoxColumn1});
-            this.dataGridView_echantillonOffert.Location = new System.Drawing.Point(586, 313);
+            this.dataGridView_echantillonOffert.Location = new System.Drawing.Point(78, 421);
             this.dataGridView_echantillonOffert.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView_echantillonOffert.Name = "dataGridView_echantillonOffert";
             this.dataGridView_echantillonOffert.RowTemplate.Height = 24;
-            this.dataGridView_echantillonOffert.Size = new System.Drawing.Size(247, 185);
+            this.dataGridView_echantillonOffert.Size = new System.Drawing.Size(350, 185);
             this.dataGridView_echantillonOffert.TabIndex = 44;
             // 
             // dataGridViewComboBoxColumn1
@@ -392,11 +391,11 @@
             this.dataGridView_echantillonPresente.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Medicaments,
             this.Nombre});
-            this.dataGridView_echantillonPresente.Location = new System.Drawing.Point(951, 313);
+            this.dataGridView_echantillonPresente.Location = new System.Drawing.Point(943, 421);
             this.dataGridView_echantillonPresente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView_echantillonPresente.Name = "dataGridView_echantillonPresente";
             this.dataGridView_echantillonPresente.RowTemplate.Height = 24;
-            this.dataGridView_echantillonPresente.Size = new System.Drawing.Size(252, 185);
+            this.dataGridView_echantillonPresente.Size = new System.Drawing.Size(350, 185);
             this.dataGridView_echantillonPresente.TabIndex = 45;
             // 
             // Medicaments
@@ -432,14 +431,13 @@
             this.Controls.Add(this.ConfPract);
             this.Controls.Add(this.prdnewrdv);
             this.Controls.Add(this.Btnsubmit);
-            this.Controls.Add(this.toz);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.richTextBoxBilan);
             this.Controls.Add(this.labelBilan);
             this.Controls.Add(this.comboBoxMotifVisite);
             this.Controls.Add(this.labelMotifVisite);
             this.Controls.Add(this.comboBox_Practiciens);
-            this.Controls.Add(this.datePickerRapport);
-            this.Controls.Add(this.labelDateRapport);
+            this.Controls.Add(this.datePickerVisite);
+            this.Controls.Add(this.labelDateVisite);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBoxNumRapport);
             this.Controls.Add(this.labelNumRapport);
@@ -461,14 +459,13 @@
         private System.Windows.Forms.Label labelNumRapport;
         private System.Windows.Forms.TextBox textBoxNumRapport;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label labelDateRapport;
-        private System.Windows.Forms.DateTimePicker datePickerRapport;
+        private System.Windows.Forms.Label labelDateVisite;
+        private System.Windows.Forms.DateTimePicker datePickerVisite;
         private System.Windows.Forms.ComboBox comboBox_Practiciens;
         private System.Windows.Forms.ComboBox comboBoxMotifVisite;
         private System.Windows.Forms.Label labelMotifVisite;
         private System.Windows.Forms.Label labelBilan;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.Label toz;
+        private System.Windows.Forms.RichTextBox richTextBoxBilan;
         private System.Windows.Forms.Button Btnsubmit;
         private System.Windows.Forms.Label prdnewrdv;
         private System.Windows.Forms.Label ConfPract;
