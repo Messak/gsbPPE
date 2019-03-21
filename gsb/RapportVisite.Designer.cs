@@ -245,18 +245,20 @@
             // LabelOffreechantillons
             // 
             this.LabelOffreechantillons.AutoSize = true;
-            this.LabelOffreechantillons.Location = new System.Drawing.Point(166, 392);
+            this.LabelOffreechantillons.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.LabelOffreechantillons.Location = new System.Drawing.Point(152, 385);
             this.LabelOffreechantillons.Name = "LabelOffreechantillons";
-            this.LabelOffreechantillons.Size = new System.Drawing.Size(163, 17);
+            this.LabelOffreechantillons.Size = new System.Drawing.Size(221, 25);
             this.LabelOffreechantillons.TabIndex = 19;
             this.LabelOffreechantillons.Text = "Offre échantillons offerts";
             // 
             // Labeloffreechantillions
             // 
             this.Labeloffreechantillions.AutoSize = true;
-            this.Labeloffreechantillions.Location = new System.Drawing.Point(1038, 392);
+            this.Labeloffreechantillions.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.Labeloffreechantillions.Location = new System.Drawing.Point(996, 385);
             this.Labeloffreechantillions.Name = "Labeloffreechantillions";
-            this.Labeloffreechantillions.Size = new System.Drawing.Size(186, 17);
+            this.Labeloffreechantillions.Size = new System.Drawing.Size(254, 25);
             this.Labeloffreechantillions.TabIndex = 21;
             this.Labeloffreechantillions.Text = "Offre échantillons présentés";
             // 
@@ -414,7 +416,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1391, 617);
+            this.ClientSize = new System.Drawing.Size(1391, 654);
             this.Controls.Add(this.dataGridView_echantillonPresente);
             this.Controls.Add(this.dataGridView_echantillonOffert);
             this.Controls.Add(this.datePickerProchainevisite);
