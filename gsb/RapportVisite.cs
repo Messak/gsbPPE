@@ -48,11 +48,20 @@ namespace gsb
         /// <summary>
         /// Surcharge pour permettre l'affichage d'un rapport et non la rédaction
         /// </summary>
-        /// <param name="id">L'id du Rapport à affiché</param>
-        public RapportVisite(string id)
+        /// <param name="idNumRapport">L'id du Rapport à affiché</param>
+        public RapportVisite(string idNumRapport)
         {
             InitializeComponent();
-
+            string reqSelectRapport = "SELECT r.RAP_DATE, r.RAP_BILAN,r.RAP_MOTIF, r.RAP_CONNAISSANCE_PRACTICIEN, r.RAP_CONFIANCE_LABO, r.RAP_DATE_VISITE, r.RAP_DATE_PROCHAINE_VISITE, r.RAP_PRESENCE_CONCURENCE FROM rapport_visite AS r WHERE r.RAP_NUM ='" + idNumRapport + "';";
+            CURS getRapportById = new CURS(ChaineConnexion);
+            getRapportById.ReqSelect(reqSelectRapport);
+            if (!getRapportById.Fin())
+            {
+                textBoxNumRapport.Text = idNumRapport;
+                comboBoxMotifVisite.Text = getRapportById.champ("RAP_MOTIF").ToString();
+                richTextBoxBilan.Text = getRapportById.champ("RAP_BILAN").ToString();
+                comboBoxConnaissancepract.Text = getRapportById.champ("RAP_CONNAISSANCE_PRACTICIEN").ToString();
+            }
         }
 
         private void RapportVisite_Load(object sender, EventArgs e)
