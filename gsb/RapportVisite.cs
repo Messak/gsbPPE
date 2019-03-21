@@ -13,6 +13,7 @@ namespace gsb
     public partial class RapportVisite : Form
     {
         string _matuser;
+        string _numprat;
         public string Matuser { get => _matuser; set => _matuser = value; }
         string ChaineConnexion = "server=51.68.64.197;user=gsbuser;password=gsbmdp;database=gsbcsharp";
         private Dictionary<int, string> praticiens = new Dictionary<int, string>();
@@ -44,6 +45,7 @@ namespace gsb
             string Name = "";
             while (!cs.Fin())
             {
+                _numprat = cs.champ("PRA_NUM").ToString();
                 Name = cs.champ("PRA_NOM").ToString() + " " + cs.champ("PRA_PRENOM").ToString();
                 praticiens.Add(Convert.ToInt16(cs.champ("PRA_NUM").ToString()), Name);
                 comboBox_Practiciens.Items.Add(Name);
@@ -63,7 +65,7 @@ namespace gsb
 
         private void RapportVisite_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void textBoxNumRapport_TextChanged(object sender, EventArgs e)
@@ -88,15 +90,37 @@ namespace gsb
 
         private void Btnsubmit_Click(object sender, EventArgs e)
         {
-            string requete = "INSERT INTO `rapport_visite`(`COL_MATRICULE`, `RAP_NUM`, `RAP_DATE`, `RAP_BILAN`, `RAP_MOTIF`, `RAP_CONNAISSANCE_PRACTICIEN`, `RAP_CONFIANCE_LABO`, `RAP_DATE_VISITE`, `RAP_DATE_PROCHAINE_VISITE`, `RAP_PRESENCE_CONCURENCE`, `PRA_NUM`)" +
-                    " VALUES ('" + Matuser + "', '" + textBoxNumRapport.Text + "', '" + dateJour + "', '" + rapBilan + "', '" + rapMotif + "', " + rapConnaissancePraticien + ", " + rapConnaissanceLabo + ", '" + rapDate + "',";
-            requete += comboBox_NewRDV.Text == "Oui"
-                ? "'" + rapDateProVisite + "'"
-                : rapDateProVisite;
-            requete += ", " + rapPresenceConcurence + ", " + praNum + ")"
+
+            string requete = "INSERT INTO `rapport_visite`(`COL_MATRICULE`, `RAP_NUM`, `RAP_DATE`, `RAP_BILAN`, `RAP_MOTIF`, `RAP_CONNAISSANCE_PRACTICIEN`, `RAP_CONFIANCE_LABO`, `RAP_DATE_VISITE`, `PRA_NUM`, `RAP_DATE_PROCHAINE_VISITE`)" +
+                    " VALUES ('" + Matuser + "', " + textBoxNumRapport.Text + ", '" + Convert.ToDateTime(DateTime.Now).ToString("yyyy-MM-dd H:mm:ss") + "', '" + richTextBoxBilan.Text + "', '" + comboBoxMotifVisite.Text + "', " + comboBoxConnaissancepract.Text + ", " + comboBoxConfLab.Text +
+                    ", '" + Convert.ToDateTime(datePickerVisite.Value).ToString("yyyy-MM-dd H:mm:ss") + "','" + _numprat + "'";
+            if (comboboxrdv.Text == "Oui")
+                requete += ",'" + Convert.ToDateTime(datePickerProchainevisite.Value).ToString("yyyy-MM-dd H:mm:ss") + "');"; 
+            else
+                requete += ",NULL);";
 
 
+                CURS validdata = new CURS(ChaineConnexion);
+                validdata.ReqAdmin(requete);
+                if (!validdata.Fin())
+                {
+                    MessageBox.Show("Insert effectué !");
+                }
+                validdata.fermer();
 
+
+            }
+
+        private void comboboxrdv_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(comboboxrdv.SelectedIndex == 1)
+            {
+                datePickerProchainevisite.Show();
+            }
+            else
+            {
+                datePickerProchainevisite.Hide();
+            }
         }
     }
-}
+    }

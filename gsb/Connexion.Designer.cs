@@ -70,6 +70,7 @@
             this.inputID.Name = "inputID";
             this.inputID.Size = new System.Drawing.Size(143, 30);
             this.inputID.TabIndex = 2;
+            this.inputID.Text = "Cadic";
             this.inputID.TextChanged += new System.EventHandler(this.inputID_TextChanged);
             // 
             // inputMDP
@@ -80,6 +81,7 @@
             this.inputMDP.Name = "inputMDP";
             this.inputMDP.Size = new System.Drawing.Size(143, 30);
             this.inputMDP.TabIndex = 3;
+            this.inputMDP.Text = "1993-dec-06";
             this.inputMDP.TextChanged += new System.EventHandler(this.inputMDP_TextChanged);
             // 
             // label3
