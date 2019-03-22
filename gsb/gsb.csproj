@@ -148,5 +148,8 @@
   <ItemGroup>
     <None Include="Resources\edit-icon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\red-cross-icon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -26,8 +26,13 @@ namespace gsb
             CURS cs = new CURS(ChaineConnexion);
             string rapNum, rapDate,rapDateVisite,rapNomPra;
             string reqInfoRapport = "SELECT r.RAP_NUM,r.RAP_DATE,r.RAP_DATE_PROCHAINE_VISITE,r.RAP_BILAN,c.COL_NOM,p.PRA_NOM FROM rapport_visite AS r,collaborateur AS c, praticien AS p WHERE c.COL_MATRICULE=r.COL_MATRICULE AND r.PRA_NUM = p.PRA_NUM";
-            if (_statutuser == "responsable")            
+            if (_statutuser == "responsable")
+            {
                 reqInfoRapport += ";";
+                dataGridView.Columns[5].Visible = true; // Rend la colonne supprimer visible si responsable
+                dataGridView.Size = new Size(dataGridView.Size.Width+100,dataGridView.Size.Height); // Agrandi la fenêtre 
+                this.Size = new Size(this.Size.Width+100,this.Height);
+            }
             else
                 reqInfoRapport += " AND r.COL_MATRICULE ='" + _matuser + "';";
             cs.ReqSelect(reqInfoRapport);
@@ -55,9 +60,16 @@ namespace gsb
             if (e.ColumnIndex.ToString() == "4") //Edite le rapport seulement quand l'utilisateur clique sur editer
             {
                 dataGridView.CurrentRow.Selected = true;
-                string id = dataGridView.Rows[e.RowIndex].Cells["NumRapport"].FormattedValue.ToString(); //récupère l'id de la ligne clické
+                string id = dataGridView.Rows[e.RowIndex].Cells["dataGridColumnNumRapport"].FormattedValue.ToString(); //récupère l'id de la ligne clické
                 RapportVisite rap = new RapportVisite(id);
                 rap.Show();
+            }
+
+            if (e.ColumnIndex.ToString() == "5")
+            {
+                dataGridView.CurrentRow.Selected = true;
+                string id = dataGridView.Rows[e.RowIndex].Cells["dataGridColumnNumRapport"].FormattedValue.ToString(); //récupère l'id de la ligne clické
+                string reqDelete = "DELETE FROM "
             }
         }
     }
