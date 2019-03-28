@@ -79,6 +79,7 @@
             this.inputMDP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.inputMDP.Location = new System.Drawing.Point(410, 202);
             this.inputMDP.Name = "inputMDP";
+            this.inputMDP.PasswordChar = '•';
             this.inputMDP.Size = new System.Drawing.Size(143, 30);
             this.inputMDP.TabIndex = 3;
             this.inputMDP.Text = "1993-dec-06";

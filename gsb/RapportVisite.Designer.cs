@@ -52,7 +52,6 @@
             this.comboBoxConfLab = new System.Windows.Forms.ComboBox();
             this.comboBoxConnaissancepract = new System.Windows.Forms.ComboBox();
             this.datePickerProchainevisite = new System.Windows.Forms.DateTimePicker();
-            this.LabelDateProchaineVisite = new System.Windows.Forms.Label();
             this.dataGridView_echantillonOffert = new System.Windows.Forms.DataGridView();
             this.dataGridViewComboBoxColumn1 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -122,7 +121,7 @@
             // 
             // datePickerVisite
             // 
-            this.datePickerVisite.Location = new System.Drawing.Point(896, 81);
+            this.datePickerVisite.Location = new System.Drawing.Point(912, 82);
             this.datePickerVisite.Margin = new System.Windows.Forms.Padding(4);
             this.datePickerVisite.Name = "datePickerVisite";
             this.datePickerVisite.Size = new System.Drawing.Size(265, 22);
@@ -130,6 +129,7 @@
             // 
             // comboBox_Practiciens
             // 
+            this.comboBox_Practiciens.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_Practiciens.FormattingEnabled = true;
             this.comboBox_Practiciens.Location = new System.Drawing.Point(223, 122);
             this.comboBox_Practiciens.Margin = new System.Windows.Forms.Padding(4);
@@ -139,6 +139,7 @@
             // 
             // comboBoxMotifVisite
             // 
+            this.comboBoxMotifVisite.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxMotifVisite.FormattingEnabled = true;
             this.comboBoxMotifVisite.Items.AddRange(new object[] {
             "Actualisation annuelle",
@@ -196,17 +197,17 @@
             // 
             this.prdnewrdv.AutoSize = true;
             this.prdnewrdv.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.prdnewrdv.Location = new System.Drawing.Point(612, 129);
+            this.prdnewrdv.Location = new System.Drawing.Point(609, 129);
             this.prdnewrdv.Name = "prdnewrdv";
-            this.prdnewrdv.Size = new System.Drawing.Size(303, 25);
+            this.prdnewrdv.Size = new System.Drawing.Size(281, 25);
             this.prdnewrdv.TabIndex = 14;
-            this.prdnewrdv.Text = "Prendre nouveau renddez-vous ?";
+            this.prdnewrdv.Text = "Prendre nouveau rendez-vous ";
             // 
             // ConfPract
             // 
             this.ConfPract.AutoSize = true;
             this.ConfPract.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.ConfPract.Location = new System.Drawing.Point(612, 217);
+            this.ConfPract.Location = new System.Drawing.Point(610, 217);
             this.ConfPract.Name = "ConfPract";
             this.ConfPract.Size = new System.Drawing.Size(217, 25);
             this.ConfPract.TabIndex = 15;
@@ -216,7 +217,7 @@
             // 
             this.ConfLabo.AutoSize = true;
             this.ConfLabo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.ConfLabo.Location = new System.Drawing.Point(612, 266);
+            this.ConfLabo.Location = new System.Drawing.Point(609, 266);
             this.ConfLabo.Name = "ConfLabo";
             this.ConfLabo.Size = new System.Drawing.Size(178, 25);
             this.ConfLabo.TabIndex = 16;
@@ -226,7 +227,7 @@
             // 
             this.ConnaissancePract.AutoSize = true;
             this.ConnaissancePract.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.ConnaissancePract.Location = new System.Drawing.Point(612, 312);
+            this.ConnaissancePract.Location = new System.Drawing.Point(609, 312);
             this.ConnaissancePract.Name = "ConnaissancePract";
             this.ConnaissancePract.Size = new System.Drawing.Size(228, 25);
             this.ConnaissancePract.TabIndex = 17;
@@ -245,18 +246,20 @@
             // LabelOffreechantillons
             // 
             this.LabelOffreechantillons.AutoSize = true;
-            this.LabelOffreechantillons.Location = new System.Drawing.Point(166, 392);
+            this.LabelOffreechantillons.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.LabelOffreechantillons.Location = new System.Drawing.Point(134, 385);
             this.LabelOffreechantillons.Name = "LabelOffreechantillons";
-            this.LabelOffreechantillons.Size = new System.Drawing.Size(163, 17);
+            this.LabelOffreechantillons.Size = new System.Drawing.Size(221, 25);
             this.LabelOffreechantillons.TabIndex = 19;
             this.LabelOffreechantillons.Text = "Offre échantillons offerts";
             // 
             // Labeloffreechantillions
             // 
             this.Labeloffreechantillions.AutoSize = true;
-            this.Labeloffreechantillions.Location = new System.Drawing.Point(1038, 392);
+            this.Labeloffreechantillions.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.Labeloffreechantillions.Location = new System.Drawing.Point(992, 385);
             this.Labeloffreechantillions.Name = "Labeloffreechantillions";
-            this.Labeloffreechantillions.Size = new System.Drawing.Size(186, 17);
+            this.Labeloffreechantillions.Size = new System.Drawing.Size(254, 25);
             this.Labeloffreechantillions.TabIndex = 21;
             this.Labeloffreechantillions.Text = "Offre échantillons présentés";
             // 
@@ -267,7 +270,7 @@
             this.comboboxrdv.Items.AddRange(new object[] {
             "Non",
             "Oui"});
-            this.comboboxrdv.Location = new System.Drawing.Point(896, 129);
+            this.comboboxrdv.Location = new System.Drawing.Point(912, 129);
             this.comboboxrdv.Name = "comboboxrdv";
             this.comboboxrdv.Size = new System.Drawing.Size(121, 24);
             this.comboboxrdv.TabIndex = 23;
@@ -275,6 +278,7 @@
             // 
             // comboBoxconfpract
             // 
+            this.comboBoxconfpract.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxconfpract.FormattingEnabled = true;
             this.comboBoxconfpract.Items.AddRange(new object[] {
             "0",
@@ -289,7 +293,7 @@
             "9",
             "10",
             "Aucune évaluation"});
-            this.comboBoxconfpract.Location = new System.Drawing.Point(896, 217);
+            this.comboBoxconfpract.Location = new System.Drawing.Point(912, 217);
             this.comboBoxconfpract.Name = "comboBoxconfpract";
             this.comboBoxconfpract.Size = new System.Drawing.Size(121, 24);
             this.comboBoxconfpract.TabIndex = 24;
@@ -297,6 +301,7 @@
             // 
             // comboBoxConfLab
             // 
+            this.comboBoxConfLab.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxConfLab.FormattingEnabled = true;
             this.comboBoxConfLab.Items.AddRange(new object[] {
             "0",
@@ -311,7 +316,7 @@
             "9",
             "10",
             "Aucune évaluation"});
-            this.comboBoxConfLab.Location = new System.Drawing.Point(896, 266);
+            this.comboBoxConfLab.Location = new System.Drawing.Point(912, 266);
             this.comboBoxConfLab.Name = "comboBoxConfLab";
             this.comboBoxConfLab.Size = new System.Drawing.Size(121, 24);
             this.comboBoxConfLab.TabIndex = 25;
@@ -319,6 +324,7 @@
             // 
             // comboBoxConnaissancepract
             // 
+            this.comboBoxConnaissancepract.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxConnaissancepract.FormattingEnabled = true;
             this.comboBoxConnaissancepract.Items.AddRange(new object[] {
             "0",
@@ -333,34 +339,24 @@
             "9",
             "10",
             "Aucune évaluation"});
-            this.comboBoxConnaissancepract.Location = new System.Drawing.Point(896, 312);
+            this.comboBoxConnaissancepract.Location = new System.Drawing.Point(912, 312);
             this.comboBoxConnaissancepract.Name = "comboBoxConnaissancepract";
             this.comboBoxConnaissancepract.Size = new System.Drawing.Size(121, 24);
             this.comboBoxConnaissancepract.TabIndex = 26;
             // 
             // datePickerProchainevisite
             // 
-            this.datePickerProchainevisite.Location = new System.Drawing.Point(896, 170);
+            this.datePickerProchainevisite.Location = new System.Drawing.Point(912, 169);
             this.datePickerProchainevisite.Margin = new System.Windows.Forms.Padding(4);
             this.datePickerProchainevisite.Name = "datePickerProchainevisite";
             this.datePickerProchainevisite.Size = new System.Drawing.Size(265, 22);
             this.datePickerProchainevisite.TabIndex = 28;
             this.datePickerProchainevisite.Visible = false;
             // 
-            // LabelDateProchaineVisite
-            // 
-            this.LabelDateProchaineVisite.AutoSize = true;
-            this.LabelDateProchaineVisite.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.LabelDateProchaineVisite.Location = new System.Drawing.Point(612, 173);
-            this.LabelDateProchaineVisite.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.LabelDateProchaineVisite.Name = "LabelDateProchaineVisite";
-            this.LabelDateProchaineVisite.Size = new System.Drawing.Size(153, 25);
-            this.LabelDateProchaineVisite.TabIndex = 27;
-            this.LabelDateProchaineVisite.Text = "Prochaine Visite";
-            // 
             // dataGridView_echantillonOffert
             // 
             this.dataGridView_echantillonOffert.AllowUserToDeleteRows = false;
+            this.dataGridView_echantillonOffert.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dataGridView_echantillonOffert.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_echantillonOffert.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewComboBoxColumn1,
@@ -387,6 +383,7 @@
             // dataGridView_echantillonPresente
             // 
             this.dataGridView_echantillonPresente.AllowUserToDeleteRows = false;
+            this.dataGridView_echantillonPresente.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dataGridView_echantillonPresente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_echantillonPresente.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Medicaments,
@@ -414,11 +411,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1391, 617);
+            this.ClientSize = new System.Drawing.Size(1391, 654);
             this.Controls.Add(this.dataGridView_echantillonPresente);
             this.Controls.Add(this.dataGridView_echantillonOffert);
             this.Controls.Add(this.datePickerProchainevisite);
-            this.Controls.Add(this.LabelDateProchaineVisite);
             this.Controls.Add(this.comboBoxConnaissancepract);
             this.Controls.Add(this.comboBoxConfLab);
             this.Controls.Add(this.comboBoxconfpract);
@@ -479,7 +475,6 @@
         private System.Windows.Forms.ComboBox comboBoxConfLab;
         private System.Windows.Forms.ComboBox comboBoxConnaissancepract;
         private System.Windows.Forms.DateTimePicker datePickerProchainevisite;
-        private System.Windows.Forms.Label LabelDateProchaineVisite;
         private System.Windows.Forms.DataGridView dataGridView_echantillonOffert;
         private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewComboBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
