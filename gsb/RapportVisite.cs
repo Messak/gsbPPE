@@ -92,34 +92,53 @@ namespace gsb
 
         private void Btnsubmit_Click(object sender, EventArgs e)
         {
-            //Remplit des listes selon les tableaux d'echantillions
-            foreach (DataGridViewRow ligne in dataGridView_echantillonOffert.Rows)
-            {
-                if(!String.IsNullOrWhiteSpace(ligne.Cells[0].FormattedValue.ToString())&& (!String.IsNullOrWhiteSpace(ligne.Cells[0].FormattedValue.ToString())))
-                    EchantillonsOffert.Add(Convert.ToString(ligne.Cells[0].FormattedValue), Convert.ToInt32(ligne.Cells[1].FormattedValue));   
-            }
-            foreach (DataGridViewRow ligne in dataGridView_echantillonPresente.Rows)
-            {
-                if (!String.IsNullOrWhiteSpace(ligne.Cells[0].FormattedValue.ToString()) && (!String.IsNullOrWhiteSpace(ligne.Cells[0].FormattedValue.ToString())))
-                    EchantillonsPresente.Add(Convert.ToString(ligne.Cells[0].FormattedValue), Convert.ToInt32(ligne.Cells[1].FormattedValue));
-            }
+            ErrorPraticien.Clear();
+            ErrorMotifVisite.Clear();
+            ErrorConfiancePrat.Clear();
+            ErrorConfianceLabo.Clear();
+            ErrorConnaissancePrat.Clear();
 
-
-            //Requete pour inserer dans la table Rapport visite
-            string requete = "INSERT INTO `rapport_visite`(`COL_MATRICULE`, `RAP_NUM`, `RAP_DATE`, `RAP_BILAN`, `RAP_MOTIF`, `RAP_CONNAISSANCE_PRACTICIEN`, `RAP_CONFIANCE_LABO`, `RAP_DATE_VISITE`, `PRA_NUM`, `RAP_DATE_PROCHAINE_VISITE`)" +
-                    " VALUES ('" + Matuser + "', " + textBoxNumRapport.Text + ", '" + Convert.ToDateTime(DateTime.Now).ToString("yyyy-MM-dd H:mm:ss") + "', '" + richTextBoxBilan.Text + "', '" + comboBoxMotifVisite.Text + "', " + comboBoxConnaissancepract.Text + ", " + comboBoxConfLab.Text +
-                    ", '" + Convert.ToDateTime(datePickerVisite.Value).ToString("yyyy-MM-dd H:mm:ss") + "','" + _numprat + "'";
-            if (comboboxrdv.Text == "Oui")
-                requete += ",'" + Convert.ToDateTime(datePickerProchainevisite.Value).ToString("yyyy-MM-dd H:mm:ss") + "');"; 
+            if (comboBox_Practiciens.Text == "" || comboBoxMotifVisite.Text == "" || comboBoxconfpract.Text == "" || comboBoxConfLab.Text == "" || comboBoxConnaissancepract.Text == "")
+            {
+                if (comboBox_Practiciens.Text == "") { ErrorPraticien.SetError(comboBox_Practiciens, "Séléctionner un praticien"); }
+                if (comboBoxMotifVisite.Text == "") { ErrorMotifVisite.SetError(comboBoxMotifVisite, "Séléctionner Motif"); }
+                if (comboBoxconfpract.Text == "") { ErrorConfiancePrat.SetError(comboBoxconfpract, "Séléctionner une valeur"); }
+                if (comboBoxConfLab.Text == "") { ErrorConfianceLabo.SetError(comboBoxConfLab, "Séléctionner une valeur"); }
+                if (comboBoxConnaissancepract.Text == "") { ErrorConnaissancePrat.SetError(comboBoxConnaissancepract, "Séléctionner une valeur"); }
+            }
             else
-                requete += ",NULL);";
-            
+            {
+                //Remplit des listes selon les tableaux d'echantillions
+                foreach (DataGridViewRow ligne in dataGridView_echantillonOffert.Rows)
+                {
+                    if (!String.IsNullOrWhiteSpace(ligne.Cells[0].FormattedValue.ToString()) && (!String.IsNullOrWhiteSpace(ligne.Cells[0].FormattedValue.ToString())))
+                        EchantillonsOffert.Add(Convert.ToString(ligne.Cells[0].FormattedValue), Convert.ToInt32(ligne.Cells[1].FormattedValue));
+                }
+                foreach (DataGridViewRow ligne in dataGridView_echantillonPresente.Rows)
+                {
+                    if (!String.IsNullOrWhiteSpace(ligne.Cells[0].FormattedValue.ToString()) && (!String.IsNullOrWhiteSpace(ligne.Cells[0].FormattedValue.ToString())))
+                    {
+                        EchantillonsPresente.Add(Convert.ToString(ligne.Cells[0].FormattedValue), Convert.ToInt32(ligne.Cells[1].FormattedValue));
+                    }
+                }
+
+
+                //Requete pour inserer dans la table Rapport visite
+                string requete = "INSERT INTO `rapport_visite`(`COL_MATRICULE`, `RAP_NUM`, `RAP_DATE`, `RAP_BILAN`, `RAP_MOTIF`, `RAP_CONNAISSANCE_PRACTICIEN`, `RAP_CONFIANCE_LABO`, `RAP_DATE_VISITE`, `PRA_NUM`, `RAP_DATE_PROCHAINE_VISITE`)" +
+                        " VALUES ('" + Matuser + "', " + textBoxNumRapport.Text + ", '" + Convert.ToDateTime(DateTime.Now).ToString("yyyy-MM-dd H:mm:ss") + "', '" + richTextBoxBilan.Text + "', '" + comboBoxMotifVisite.Text + "', " + comboBoxConnaissancepract.Text + ", " + comboBoxConfLab.Text +
+                        ", '" + Convert.ToDateTime(datePickerVisite.Value).ToString("yyyy-MM-dd H:mm:ss") + "','" + _numprat + "'";
+                if (comboboxrdv.Text == "Oui")
+                    requete += ",'" + Convert.ToDateTime(datePickerProchainevisite.Value).ToString("yyyy-MM-dd H:mm:ss") + "');";
+                else
+                    requete += ",NULL);";
+
                 CURS validdata = new CURS(ChaineConnexion);
                 validdata.ReqAdmin(requete);
                 if (!validdata.Fin())
                 {
                     foreach (KeyValuePair<string, int> ligne in EchantillonsOffert)
-                    { CURS insertdistribuer = new CURS(ChaineConnexion);
+                    {
+                        CURS insertdistribuer = new CURS(ChaineConnexion);
                         insertdistribuer.DefFonctStockee("ajoutmedicament");
 
                         insertdistribuer.ajouteparametreCol("NomMedoc", ligne.Key);
@@ -130,7 +149,7 @@ namespace gsb
                         insertdistribuer.directionparametreCol("NumRap", ParameterDirection.Input);
                         insertdistribuer.ajouteparametreCol("QuantiteMedoc", ligne.Value);
                         insertdistribuer.directionparametreCol("QuantiteMedoc", ParameterDirection.Input);
-                        insertdistribuer.ajouteparametreCol("coffert",1);
+                        insertdistribuer.ajouteparametreCol("coffert", 1);
                         insertdistribuer.directionparametreCol("coffert", ParameterDirection.Input);
                         insertdistribuer.ajouteparametreCol("cpresente", 0);
                         insertdistribuer.directionparametreCol("cpresente", ParameterDirection.Input);
@@ -157,9 +176,11 @@ namespace gsb
                     }
 
                     MessageBox.Show("Le rapport a été créé !");
-                this.Close();
+                    this.Close();
+                }
+                validdata.fermer();
+            
             }
-            validdata.fermer();
         }
 
         private void comboboxrdv_SelectedIndexChanged(object sender, EventArgs e)

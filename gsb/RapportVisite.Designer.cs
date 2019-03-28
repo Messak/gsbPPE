@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.labelNumRapport = new System.Windows.Forms.Label();
             this.textBoxNumRapport = new System.Windows.Forms.TextBox();
@@ -58,8 +59,18 @@
             this.dataGridView_echantillonPresente = new System.Windows.Forms.DataGridView();
             this.Medicaments = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ErrorPraticien = new System.Windows.Forms.ErrorProvider(this.components);
+            this.ErrorMotifVisite = new System.Windows.Forms.ErrorProvider(this.components);
+            this.ErrorConfiancePrat = new System.Windows.Forms.ErrorProvider(this.components);
+            this.ErrorConfianceLabo = new System.Windows.Forms.ErrorProvider(this.components);
+            this.ErrorConnaissancePrat = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_echantillonOffert)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_echantillonPresente)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ErrorPraticien)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ErrorMotifVisite)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ErrorConfiancePrat)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ErrorConfianceLabo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ErrorConnaissancePrat)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -407,6 +418,26 @@
             this.Nombre.Name = "Nombre";
             this.Nombre.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
+            // ErrorPraticien
+            // 
+            this.ErrorPraticien.ContainerControl = this;
+            // 
+            // ErrorMotifVisite
+            // 
+            this.ErrorMotifVisite.ContainerControl = this;
+            // 
+            // ErrorConfiancePrat
+            // 
+            this.ErrorConfiancePrat.ContainerControl = this;
+            // 
+            // ErrorConfianceLabo
+            // 
+            this.ErrorConfianceLabo.ContainerControl = this;
+            // 
+            // ErrorConnaissancePrat
+            // 
+            this.ErrorConnaissancePrat.ContainerControl = this;
+            // 
             // RapportVisite
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -444,6 +475,11 @@
             this.Load += new System.EventHandler(this.RapportVisite_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_echantillonOffert)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_echantillonPresente)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ErrorPraticien)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ErrorMotifVisite)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ErrorConfiancePrat)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ErrorConfianceLabo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ErrorConnaissancePrat)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -481,5 +517,10 @@
         private System.Windows.Forms.DataGridView dataGridView_echantillonPresente;
         private System.Windows.Forms.DataGridViewComboBoxColumn Medicaments;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.ErrorProvider ErrorPraticien;
+        private System.Windows.Forms.ErrorProvider ErrorMotifVisite;
+        private System.Windows.Forms.ErrorProvider ErrorConfiancePrat;
+        private System.Windows.Forms.ErrorProvider ErrorConfianceLabo;
+        private System.Windows.Forms.ErrorProvider ErrorConnaissancePrat;
     }
 }
