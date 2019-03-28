@@ -46,8 +46,9 @@
             // dataGridView
             // 
             this.dataGridView.AllowUserToAddRows = false;
-            this.dataGridView.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dataGridView.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -65,7 +66,7 @@
             this.dataGridColumnEditer,
             this.dataGridColumnSupprimer});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
@@ -76,7 +77,7 @@
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dataGridView.RowHeadersVisible = false;
-            this.dataGridView.Size = new System.Drawing.Size(584, 377);
+            this.dataGridView.Size = new System.Drawing.Size(580, 377);
             this.dataGridView.TabIndex = 0;
             this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -84,7 +85,6 @@
             // 
             this.dataGridViewImageColumn1.FillWeight = 50F;
             this.dataGridViewImageColumn1.HeaderText = "Editer";
-            this.dataGridViewImageColumn1.Image = global::gsb.Properties.Resources.edit_icon;
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
             this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewImageColumn1.ToolTipText = "Permet d\'éditer le rapport";
@@ -129,8 +129,8 @@
             // dataGridColumnEditer
             // 
             this.dataGridColumnEditer.FillWeight = 50F;
-            this.dataGridColumnEditer.HeaderText = "Editer";
-            this.dataGridColumnEditer.Image = global::gsb.Properties.Resources.edit_icon;
+            this.dataGridColumnEditer.HeaderText = "Voir";
+            this.dataGridColumnEditer.Image = global::gsb.Properties.Resources.eye_icon;
             this.dataGridColumnEditer.Name = "dataGridColumnEditer";
             this.dataGridColumnEditer.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridColumnEditer.ToolTipText = "Permet d\'éditer le rapport";
@@ -152,7 +152,7 @@
             this.ClientSize = new System.Drawing.Size(604, 404);
             this.Controls.Add(this.dataGridView);
             this.Name = "ListerCompteRendu";
-            this.Text = "ListerCompteRendu";
+            this.Text = "Lister les Rapports";
             this.Load += new System.EventHandler(this.ListerCompteRendu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);

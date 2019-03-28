@@ -63,9 +63,9 @@ namespace gsb.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap edit_icon {
+        internal static System.Drawing.Bitmap eye_icon {
             get {
-                object obj = ResourceManager.GetObject("edit_icon", resourceCulture);
+                object obj = ResourceManager.GetObject("eye_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -46,19 +46,18 @@
             this.labelMainTitle.ForeColor = System.Drawing.Color.RoyalBlue;
             this.labelMainTitle.Location = new System.Drawing.Point(190, 27);
             this.labelMainTitle.Name = "labelMainTitle";
-            this.labelMainTitle.Size = new System.Drawing.Size(394, 32);
+            this.labelMainTitle.Size = new System.Drawing.Size(422, 32);
             this.labelMainTitle.TabIndex = 0;
-            this.labelMainTitle.Text = "Gestion des comptes rendus";
+            this.labelMainTitle.Text = "Gestion des Rapports de Visite";
             // 
             // buttonCompteRendu
             // 
             this.buttonCompteRendu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-
             this.buttonCompteRendu.Location = new System.Drawing.Point(297, 103);
             this.buttonCompteRendu.Name = "buttonCompteRendu";
             this.buttonCompteRendu.Size = new System.Drawing.Size(180, 43);
             this.buttonCompteRendu.TabIndex = 1;
-            this.buttonCompteRendu.Text = "Compte Rendu";
+            this.buttonCompteRendu.Text = "Rapport de Visite";
             this.buttonCompteRendu.UseVisualStyleBackColor = true;
             this.buttonCompteRendu.Click += new System.EventHandler(this.buttonCompteRendu_Click);
             // 
@@ -90,7 +89,7 @@
             this.buttonListerCompteRendu.Name = "buttonListerCompteRendu";
             this.buttonListerCompteRendu.Size = new System.Drawing.Size(180, 43);
             this.buttonListerCompteRendu.TabIndex = 4;
-            this.buttonListerCompteRendu.Text = "Lister les Comptes Rendus";
+            this.buttonListerCompteRendu.Text = "Lister les Rapports de Visite";
             this.buttonListerCompteRendu.UseVisualStyleBackColor = true;
             this.buttonListerCompteRendu.Visible = false;
             this.buttonListerCompteRendu.Click += new System.EventHandler(this.buttonListerCompteRendu_Click);
@@ -102,7 +101,7 @@
             this.buttonRedigerCompteRendu.Name = "buttonRedigerCompteRendu";
             this.buttonRedigerCompteRendu.Size = new System.Drawing.Size(180, 43);
             this.buttonRedigerCompteRendu.TabIndex = 5;
-            this.buttonRedigerCompteRendu.Text = "Rédiger un Compte Rendu";
+            this.buttonRedigerCompteRendu.Text = "Rédiger un Rapport de Visite";
             this.buttonRedigerCompteRendu.UseVisualStyleBackColor = true;
             this.buttonRedigerCompteRendu.Visible = false;
             this.buttonRedigerCompteRendu.Click += new System.EventHandler(this.buttonRedigerCompteRendu_Click);
