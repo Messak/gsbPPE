@@ -59,8 +59,13 @@ namespace gsb
             idrapp.ReqSelect("SELECT RAP_NUM FROM rapport_visite ORDER BY RAP_NUM DESC LIMIT 1;");
             if (!idrapp.Fin())
             {
-                int idrap = Convert.ToInt32(idrapp.champ("RAP_NUM").ToString()) + 1;
-                textBoxNumRapport.Text = idrap.ToString();
+                    int idrap = Convert.ToInt32(idrapp.champ("RAP_NUM").ToString()) + 1;
+                    textBoxNumRapport.Text = idrap.ToString();
+                
+            }
+            else
+            {
+                textBoxNumRapport.Text = "1";
             }
             idrapp.fermer();
         }
