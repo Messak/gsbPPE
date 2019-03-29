@@ -163,5 +163,20 @@
   <ItemGroup>
     <None Include="img\rapport.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\red-cross-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\12125-eye-icon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
