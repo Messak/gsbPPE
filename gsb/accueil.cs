@@ -65,6 +65,7 @@ namespace gsb
 
         private void BtnPraticien_Click(object sender, EventArgs e)
         {
+
             Praticiens VoirLesPraticiens = new Praticiens();
             VoirLesPraticiens.Show();
         }
