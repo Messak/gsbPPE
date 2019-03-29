@@ -117,10 +117,49 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="NumRapport.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="dataGridColumnNumRapport.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="rapDate.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="dataGridColumnrapDate.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <metadata name="dataGridColumnDateVisite.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="dataGridColumnPraticien.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="dataGridColumnEditer.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="dataGridColumnSupprimer.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="dataGridViewImageColumn2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAABMBJREFUSEvd
+        lXtMU3cUx8EoxsxsLsv+2p/Llixz7qnMgQh2pYIIMszGNpagyMhg4KZuZnG6ZLgsMZnCnDOZcSw6BEU3
+        MOpgIiAg2DdI35TSFmh7294+7y23T/f9NdcwogP+3kk+Ob/e3z3n/O55/Jry/xXFuwU7TMe/b1fXVFTx
+        j+aJuFi02vDNwV+M3x2+ptiZv45/vDSRFQlz6ds9rkQ8bucc9gl13cf7+K2kDBQKV+i/PtAe57go3tFN
+        n//VoHy/aC2/vbDICrZss7Wed3AOW2CssszolQxbQubJwNiesgqy37l1c6ru4N6TMYaZtbWcc+q/+lwd
+        Y1nP1NnTcmVp0XNJJ/8l8mJRkf1yC83ZbczIh8VBcc4GViJ8S0X394wz43qn9ovaozh5Q8RDh3AIFvt+
+        MKCurZQiYMjyc4NRviP3dd7dfEFaXqCutRvDblcAzj13s9cnQAxQktwMjWdoYDSRSBgAY29rsYu3pNPY
+        MwEjUGg+q9LHQiEOQXQI8jTvdk7k7+SVR5mgle7rNsNYi5PRIA7jKLRdIspUeQZvj9suNXuxz+A5g+c+
+        4MDaLduWowhZzb6gRqWVFb79Ku92TnpEm1Yit20Rn9dpb7ughuEYcMM4Bk1gxYI3SdAEuI/nEWgOuCTC
+        jEGfZNg0Oz1FafZW7eddPix9woyVqk/KG9E5Accfl8ZhbICjELADG78mqSNEwLREtGnEKx4yhSyTLGq0
+        i3e1sNyr+OBI1O9z2a+0klT1Az14kDLyBVFoP5wb/UrZJFITUFXvLuXNFxd5Sd6TqIUXBQ3hVFo4owBx
+        +u/TG6xnTpHCc9Pnzsp508Xllihrmbqu8sdoMBhBy2pIt+DEJN9x8CD3M9CjktzMmyi8Grm3qmoqknOy
+        oNzJz16lrt1zAa0ammlussFRAI6c0GHiHJC2JYUlNaGgaQRRegb7jAhCY+IP9xYIUnl382UgL3uV9sCn
+        F5F730zzb1YYk06agKMANDn1fXxNApDfPjwnX0RwYU7ECGIOOx00hu4E73K+YDg+whyY6YFeC4y64eAe
+        MAM/iEi3Zvm9d+94HB2XexCEDBdp4WTRAYuCSzDttqBWZZJtF6TzbucEw/GSq7uTTDI1UlbShyASoIex
+        VZq/edavkDIoKAXcqI0KewZA0kXSFtV9WWeLh8Oz5pM/6KTbBU/xbucLukfo6rpu4Ci7G9dFF4yV+HwW
+        fW5l9Bofhqgejn4Kuyif7eLvpIVHAavZV+3CNcFYTjdq5EXCV3h3jxZFSd56542rqrCTcqhqduu9w4OO
+        2SlLWFW9q5Lsd2Snp+KWPR6m3QHn9Q6t/tB+KhZiOcupE1L5zvxnkk4WE3yJwPX3DTNJB0c5OASq57eS
+        clOwMQ0d0xpjmQm8E8BVbYTNs/z20gT/C4KJY/WdytLCo6jBY/1Zb6zpznztCfA41quleVlrEPjY+LeH
+        /pQW5LzImz0sVze+nIYiHQFNoAuIAZneSUD6ndyWVuAE5Ir2AnJNTwGybwFkbwSQ7vsLNILiZICWDWuX
+        o1DleHAGup2AdSf0LTCENSnkJDABHX6T9TQ0GUTyh0MuRCU0ea8X6yvQTeC9ZIClSsO655eB5WAFTxr/
+        +9GTm5SUlH8A4stcalxe2fAAAAAASUVORK5CYII=
+</value>
+  </data>
 </root>
