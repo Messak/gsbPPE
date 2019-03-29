@@ -20,6 +20,7 @@ namespace gsb
 
         private void Praticiens_Load(object sender, EventArgs e)
         {
+            //Requete pour remplir le datagridview
             CURS cs = new CURS(ChaineConnexion);
             string req = "SELECT PRA_NUM, PRA_NOM, PRA_PRENOM, PRA_ADRESSE, PRA_CP, PRA_VILLE,PRA_COEFNOTORIETE, TYP_LIBELLE FROM praticien, type_praticien WHERE praticien.typ_code=type_praticien.TYP_CODE;";
             cs.ReqSelect(req);
@@ -28,6 +29,7 @@ namespace gsb
                 dataGridView.Rows.Add(cs.champ("PRA_NOM").ToString(), cs.champ("PRA_PRENOM").ToString(), cs.champ("PRA_NUM").ToString(), cs.champ("PRA_ADRESSE").ToString(), cs.champ("PRA_CP").ToString(), cs.champ("PRA_VILLE").ToString(), cs.champ("PRA_COEFNOTORIETE").ToString(), cs.champ("TYP_LIBELLE").ToString());
                 cs.suivant();
             }
+            cs.fermer();
         }
     }
 }

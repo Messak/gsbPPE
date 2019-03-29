@@ -20,6 +20,8 @@ namespace gsb
 
         private void Visiteurs_Load(object sender, EventArgs e)
         {
+            //Requete pour remplir le datagridview
+
             CURS cs = new CURS(ChaineConnexion);
             string req = "SELECT COL_MATRICULE, COL_NOM, COL_PRENOM, COL_ADRESSE, COL_CP, COL_VILLE, COL_DATEEMBAUCHE, LAB_NOM FROM collaborateur, labo WHERE collaborateur.LAB_CODE=labo.LAB_CODE;";
             cs.ReqSelect(req);
@@ -28,6 +30,7 @@ namespace gsb
                 dataGridView.Rows.Add(cs.champ("COL_NOM").ToString(), cs.champ("COL_PRENOM").ToString(), cs.champ("COL_MATRICULE").ToString(), cs.champ("COL_ADRESSE").ToString(), cs.champ("COL_CP").ToString(), cs.champ("COL_VILLE").ToString(), cs.champ("COL_DATEEMBAUCHE").ToString(), cs.champ("LAB_NOM").ToString());
                 cs.suivant();
             }
+            cs.fermer();
         }
     }
 }
