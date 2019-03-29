@@ -72,26 +72,14 @@ namespace gsb
         public RapportVisite(string idNumRapport)
         {
             InitializeComponent();
-            string reqSelectRapport = "SELECT r.RAP_DATE, r.RAP_BILAN,r.RAP_MOTIF, r.RAP_CONNAISSANCE_PRACTICIEN, r.RAP_CONFIANCE_LABO, r.RAP_DATE_VISITE, r.RAP_DATE_PROCHAINE_VISITE, r.RAP_PRESENCE_CONCURENCE, p.PRA_NOM, p.PRA_PRENOM, p.COEFNOTORIETE FROM rapport_visite,praticien AS r WHERE r.RAP_NUM ='" + idNumRapport + "' AND r.PRA_NUM=p.PRA_NUM;";
+            string reqSelectRapport = "SELECT r.RAP_DATE, r.RAP_BILAN,r.RAP_MOTIF, r.RAP_CONNAISSANCE_PRACTICIEN, r.RAP_CONFIANCE_LABO, r.RAP_DATE_VISITE, r.RAP_DATE_PROCHAINE_VISITE, r.RAP_PRESENCE_CONCURENCE FROM rapport_visite AS r WHERE r.RAP_NUM ='" + idNumRapport + "';";
             CURS getRapportById = new CURS(ChaineConnexion);
             getRapportById.ReqSelect(reqSelectRapport);
             if (!getRapportById.Fin())
             {
                 textBoxNumRapport.Text = idNumRapport;
-                comboBox_Practiciens.Text = getRapportById.champ("PRA_NOM").ToString() + " " + getRapportById.champ("PRA_PRENOM").ToString();
                 comboBoxMotifVisite.Text = getRapportById.champ("RAP_MOTIF").ToString();
-                datePickerVisite.Value = Convert.ToDateTime(getRapportById.champ("RAP_DATE").ToString());
-                string datenouveaurdv = getRapportById.champ("RAP_DATE_PROCHAINE_VISITE").ToString();
-                if (!String.IsNullOrEmpty(datenouveaurdv))
-                {
-                    comboboxrdv.Text = "Oui";
-                    datePickerProchainevisite.Show();
-                    datePickerProchainevisite.Value = Convert.ToDateTime(datenouveaurdv);
-                }
-                else
-                    datePickerProchainevisite.Hide();
                 richTextBoxBilan.Text = getRapportById.champ("RAP_BILAN").ToString();
-                comboBoxconfpract.Text = getRapportById.champ("PRA_COEFNOTORIETE").ToString();
                 comboBoxConnaissancepract.Text = getRapportById.champ("RAP_CONNAISSANCE_PRACTICIEN").ToString();
             }
         }

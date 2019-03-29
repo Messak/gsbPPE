@@ -35,16 +35,16 @@ namespace gsb
                 this.Size = new Size(this.Size.Width+100,this.Height);                              // Agrandi la fenetre
             }
             else
-                reqInfoRapport += " AND r.COL_MATRICULE ='" + _matuser + "';"; //Si pas responsable alors ajouté le matricule pour afficher seulement ceux dont il a acces
+                reqInfoRapport += " AND r.COL_MATRICULE ='" + _matuser + "';";
             cs.ReqSelect(reqInfoRapport);
-            if (cs.Fin()) // Vérifie si il y a des rapport
+            if (cs.Fin())
             {
                 cs.fermer();
                 MessageBox.Show("Aucun Rapport a afficher");
                 this.Close();
             } else
             {
-                while (!cs.Fin()) // Récupère les rapports
+                while (!cs.Fin())
                 {
                     rapNum = cs.champ("RAP_NUM").ToString();
                     rapDate = cs.champ("RAP_DATE").ToString();
@@ -63,7 +63,7 @@ namespace gsb
             if (e.ColumnIndex.ToString() == "4")                                                                       //Edite le rapport seulement quand l'utilisateur clique sur editer
             {
                 dataGridView.CurrentRow.Selected = true;
-                string id = Convert.ToInt32(dataGridView.Rows[e.RowIndex].Cells["dataGridColumnNumRapport"].FormattedValue.ToString()) >= 0  ? dataGridView.Rows[e.RowIndex].Cells["dataGridColumnNumRapport"].FormattedValue.ToString() : ("0"); //récupère l'id de la ligne cliqué gère quand clique sur headercolumn
+                string id = Convert.ToInt32(dataGridView.Rows[e.RowIndex].Cells["dataGridColumnNumRapport"].FormattedValue.ToString()) >= 0  ? dataGridView.Rows[e.RowIndex].Cells["dataGridColumnNumRapport"].FormattedValue.ToString() : ("0"); //récupère l'id de la ligne cliqué
                 RapportVisite rap = new RapportVisite(id);
                 rap.Show();
             }
@@ -72,7 +72,7 @@ namespace gsb
             {
                 CURS cs = new CURS(ChaineConnexion);
                 dataGridView.CurrentRow.Selected = true;
-                string id = Convert.ToInt32(dataGridView.Rows[e.RowIndex].Cells["dataGridColumnNumRapport"].FormattedValue.ToString()) >= 0 ? dataGridView.Rows[e.RowIndex].Cells["dataGridColumnNumRapport"].FormattedValue.ToString() : ("0"); //récupère l'id de la ligne cliqué gère quand clique sur headercolumn
+                string id = dataGridView.Rows[e.RowIndex].Cells["dataGridColumnNumRapport"].FormattedValue.ToString(); //récupère l'id de la ligne cliqué
                 string reqDeleteRapport = "DELETE FROM rapport_visite WHERE RAP_NUM=" + id + ";";
                 var verifSiSupression = MessageBox.Show("Etes vous sur de vouloir supprimer ce rapport ?","Vérification",MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
                 if (verifSiSupression == DialogResult.Yes)
