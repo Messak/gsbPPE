@@ -39,6 +39,8 @@ namespace gsb
         private void accueil_Load(object sender, EventArgs e)
         {
             statututilisateur.Text = _statutuser;
+            if(!(statututilisateur.Text=="responsable"))
+            { BtnListerVisiteurs.Hide(); BtnPraticien.Hide(); buttonListerCompteRendu.Text = "Lister mes Comptes Rendus"; }
         }
 
         private void buttonRedigerCompteRendu_Click(object sender, EventArgs e)
@@ -55,6 +57,18 @@ namespace gsb
             lister.Statutuser1 = _statutuser;
             lister.Matuser1 = _matuser;
             lister.Show();
+        }
+
+        private void BtnListerVisiteurs_Click(object sender, EventArgs e)
+        {
+            Visiteurs VoirLesVisiteurs = new Visiteurs();
+            VoirLesVisiteurs.Show();
+        }
+
+        private void BtnPraticien_Click(object sender, EventArgs e)
+        {
+            Praticiens VoirLesPraticiens = new Praticiens();
+            VoirLesPraticiens.Show();
         }
     }
 }

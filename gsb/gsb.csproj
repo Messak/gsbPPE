@@ -75,19 +75,37 @@
     <Compile Include="Connexion.Designer.cs">
       <DependentUpon>Connexion.cs</DependentUpon>
     </Compile>
-    <Compile Include="ListerCompteRendu.cs">
+    <Compile Include="Praticiens.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ListerCompteRendu.Designer.cs">
+    <Compile Include="Praticiens.Designer.cs">
+      <DependentUpon>Praticiens.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Visites\ListerCompteRendu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Visites\ListerCompteRendu.Designer.cs">
       <DependentUpon>ListerCompteRendu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Medicaments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Medicaments.Designer.cs">
+      <DependentUpon>Medicaments.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RapportVisite.cs">
+    <Compile Include="Visites\RapportVisite.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RapportVisite.Designer.cs">
+    <Compile Include="Visites\RapportVisite.Designer.cs">
       <DependentUpon>RapportVisite.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Visiteurs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Visiteurs.Designer.cs">
+      <DependentUpon>Visiteurs.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="accueil.resx">
       <DependentUpon>accueil.cs</DependentUpon>
@@ -95,7 +113,10 @@
     <EmbeddedResource Include="Connexion.resx">
       <DependentUpon>Connexion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ListerCompteRendu.resx">
+    <EmbeddedResource Include="Praticiens.resx">
+      <DependentUpon>Praticiens.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Visites\ListerCompteRendu.resx">
       <DependentUpon>ListerCompteRendu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -108,8 +129,11 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="RapportVisite.resx">
+    <EmbeddedResource Include="Visites\RapportVisite.resx">
       <DependentUpon>RapportVisite.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Visiteurs.resx">
+      <DependentUpon>Visiteurs.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
