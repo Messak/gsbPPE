@@ -18,30 +18,14 @@ namespace gsb
         private Dictionary<string, int> EchantillonsPresente = new Dictionary<string, int>();
 
         public string Matuser { get => _matuser; set => _matuser = value; }
+
         string ChaineConnexion = "server=51.68.64.197;user=gsbuser;password=gsbmdp;database=gsbcsharp";
         private Dictionary<int, string> praticiens = new Dictionary<int, string>();
 
-        
-        public RapportVisite()
+        private void remplirComboxBoxPraticien()
         {
-            InitializeComponent();
-
-            //Fonction qui rempli les datagrid views médicament
-                CURS remplirmedoc = new CURS(ChaineConnexion);
-                string requetemedoc = "SELECT `medicament`.`MED_NOMCOMMERCIAL` " +
-                    "FROM `medicament` " +
-                    "ORDER BY `medicament`.`MED_NOMCOMMERCIAL` ASC";
-                remplirmedoc.ReqSelect(requetemedoc);
-                while (!remplirmedoc.Fin())
-                {
-                    Medicaments.Items.Add(remplirmedoc.champ("MED_NOMCOMMERCIAL").ToString());
-                    dataGridViewComboBoxColumn1.Items.Add(remplirmedoc.champ("MED_NOMCOMMERCIAL").ToString());
-                    remplirmedoc.suivant();
-                }
-                remplirmedoc.fermer();            
-            
             //Rempli le combobox praticien 
-                CURS cs = new CURS(ChaineConnexion);
+            CURS cs = new CURS(ChaineConnexion);
             string requete = "SELECT `praticien`.`PRA_NUM`, `praticien`.`PRA_NOM`, `praticien`.`PRA_PRENOM` FROM `praticien` ORDER BY `praticien`.`PRA_NOM`";
             cs.ReqSelect(requete);
             string Name = "";
@@ -54,6 +38,89 @@ namespace gsb
                 cs.suivant();
             }
             cs.fermer();
+        }
+        private void remplirDataGridViewMedicament()
+        {
+            //Fonction qui rempli les datagrids views médicament
+            CURS remplirmedoc = new CURS(ChaineConnexion);
+            string requetemedoc = "SELECT `medicament`.`MED_NOMCOMMERCIAL` " +
+                "FROM `medicament` " +
+                "ORDER BY `medicament`.`MED_NOMCOMMERCIAL` ASC";
+            remplirmedoc.ReqSelect(requetemedoc);
+            while (!remplirmedoc.Fin())
+            {
+                Medicaments.Items.Add(remplirmedoc.champ("MED_NOMCOMMERCIAL").ToString());
+                dataGridViewComboBoxColumn1.Items.Add(remplirmedoc.champ("MED_NOMCOMMERCIAL").ToString());
+                remplirmedoc.suivant();
+            }
+            remplirmedoc.fermer();
+        }
+        public RapportVisite()
+        {
+            InitializeComponent();
+            remplirComboxBoxPraticien();
+            remplirDataGridViewMedicament();
+        }
+
+        /// <summary>
+        /// Surcharge pour permettre l'affichage d'un rapport et non la rédaction
+        /// </summary>
+        /// <param name="idNumRapport">L'id du Rapport à affiché</param>
+        /// <param name="statutUser">Statut de l'utilisateur, responsable ou null</param>
+        public RapportVisite(string idNumRapport,string statutUser)
+        {
+            InitializeComponent();
+            remplirComboxBoxPraticien();
+            if(statutUser == "responsable")
+            {
+                buttonModifier.Show();
+                buttonValider.Hide();
+            } else
+            {
+                comboBox_Practiciens.Enabled = false;
+                comboBoxMotifVisite.Enabled = false;
+                comboBoxConfLab.Enabled = false;
+                comboBoxConnaissancepract.Enabled = false;
+                comboboxrdv.Enabled = false;
+                richTextBoxBilan.Enabled = false;
+                datePickerProchainevisite.Enabled = false;
+                datePickerVisite.Enabled = false;
+                dataGridView_echantillonOffert.Enabled = false;
+                dataGridView_echantillonPresente.Enabled = false;
+                buttonValider.Enabled = false;
+                
+            }
+
+
+            string reqSelectRapport = "SELECT r.RAP_DATE,r.RAP_BILAN,r.RAP_MOTIF,r.RAP_CONNAISSANCE_PRACTICIEN,r.RAP_CONFIANCE_LABO,r.RAP_DATE_VISITE,r.RAP_DATE_PROCHAINE_VISITE, p.PRA_NOM, p.PRA_PRENOM FROM rapport_visite AS r ,praticien AS p WHERE r.RAP_NUM="+ idNumRapport +" AND r.PRA_NUM=p.PRA_NUM";
+            CURS getRapportById = new CURS(ChaineConnexion);
+            getRapportById.ReqSelect(reqSelectRapport);
+            if (!getRapportById.Fin())
+            {
+                textBoxNumRapport.Text = idNumRapport;
+                string praticien = getRapportById.champ("PRA_NOM").ToString();
+                praticien += " ";
+                praticien += getRapportById.champ("PRA_PRENOM").ToString();
+                comboBox_Practiciens.SelectedIndex = comboBox_Practiciens.Items.IndexOf(praticien); 
+                comboBoxMotifVisite.Text = getRapportById.champ("RAP_MOTIF").ToString();
+                datePickerVisite.Value = DateTime.Parse(getRapportById.champ("RAP_DATE").ToString());
+                string datenouveaurdv = getRapportById.champ("RAP_DATE_PROCHAINE_VISITE").ToString();
+                if (!String.IsNullOrEmpty(datenouveaurdv))
+                {
+                    comboboxrdv.Text = "Oui";
+                    datePickerProchainevisite.Show();
+                    datePickerProchainevisite.Value = DateTime.Parse(datenouveaurdv);
+                }
+                else
+                    datePickerProchainevisite.Hide();
+                richTextBoxBilan.Text = getRapportById.champ("RAP_BILAN").ToString();
+                comboBoxConnaissancepract.Text = getRapportById.champ("RAP_CONNAISSANCE_PRACTICIEN").ToString();
+                comboBoxConfLab.Text = getRapportById.champ("RAP_CONFIANCE_LABO").ToString();
+            }
+            getRapportById.fermer();
+        }
+        private void RapportVisite_Load(object sender, EventArgs e)
+        {
             //Rempli le label id rapport
             CURS idrapp = new CURS(ChaineConnexion);
             idrapp.ReqSelect("SELECT RAP_NUM FROM rapport_visite ORDER BY RAP_NUM DESC LIMIT 1;");
@@ -63,30 +130,6 @@ namespace gsb
                 textBoxNumRapport.Text = idrap.ToString();
             }
             idrapp.fermer();
-        }
-
-        /// <summary>
-        /// Surcharge pour permettre l'affichage d'un rapport et non la rédaction
-        /// </summary>
-        /// <param name="idNumRapport">L'id du Rapport à affiché</param>
-        public RapportVisite(string idNumRapport)
-        {
-            InitializeComponent();
-            string reqSelectRapport = "SELECT r.RAP_DATE, r.RAP_BILAN,r.RAP_MOTIF, r.RAP_CONNAISSANCE_PRACTICIEN, r.RAP_CONFIANCE_LABO, r.RAP_DATE_VISITE, r.RAP_DATE_PROCHAINE_VISITE, r.RAP_PRESENCE_CONCURENCE FROM rapport_visite AS r WHERE r.RAP_NUM ='" + idNumRapport + "';";
-            CURS getRapportById = new CURS(ChaineConnexion);
-            getRapportById.ReqSelect(reqSelectRapport);
-            if (!getRapportById.Fin())
-            {
-                textBoxNumRapport.Text = idNumRapport;
-                comboBoxMotifVisite.Text = getRapportById.champ("RAP_MOTIF").ToString();
-                richTextBoxBilan.Text = getRapportById.champ("RAP_BILAN").ToString();
-                comboBoxConnaissancepract.Text = getRapportById.champ("RAP_CONNAISSANCE_PRACTICIEN").ToString();
-            }
-        }
-
-        private void RapportVisite_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void textBoxNumRapport_TextChanged(object sender, EventArgs e)
@@ -117,11 +160,10 @@ namespace gsb
             ErrorConfianceLabo.Clear();
             ErrorConnaissancePrat.Clear();
 
-            if (comboBox_Practiciens.Text == "" || comboBoxMotifVisite.Text == "" || comboBoxconfpract.Text == "" || comboBoxConfLab.Text == "" || comboBoxConnaissancepract.Text == "")
+            if (comboBox_Practiciens.Text == "" || comboBoxMotifVisite.Text == "" || comboBoxConfLab.Text == "" || comboBoxConnaissancepract.Text == "")
             {
                 if (comboBox_Practiciens.Text == "") { ErrorPraticien.SetError(comboBox_Practiciens, "Séléctionner un praticien"); }
                 if (comboBoxMotifVisite.Text == "") { ErrorMotifVisite.SetError(comboBoxMotifVisite, "Séléctionner Motif"); }
-                if (comboBoxconfpract.Text == "") { ErrorConfiancePrat.SetError(comboBoxconfpract, "Séléctionner une valeur"); }
                 if (comboBoxConfLab.Text == "") { ErrorConfianceLabo.SetError(comboBoxConfLab, "Séléctionner une valeur"); }
                 if (comboBoxConnaissancepract.Text == "") { ErrorConnaissancePrat.SetError(comboBoxConnaissancepract, "Séléctionner une valeur"); }
             }
