@@ -55,7 +55,6 @@ namespace gsb
                 }
                 cs.fermer();
             }
-
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -64,7 +63,8 @@ namespace gsb
             {
                 dataGridView.CurrentRow.Selected = true;
                 string id = Convert.ToInt32(dataGridView.Rows[e.RowIndex].Cells["dataGridColumnNumRapport"].FormattedValue.ToString()) >= 0  ? dataGridView.Rows[e.RowIndex].Cells["dataGridColumnNumRapport"].FormattedValue.ToString() : ("0"); //récupère l'id de la ligne cliqué
-                RapportVisite rap = new RapportVisite(id);
+                RapportVisite rap = new RapportVisite(id,_statutuser);
+                rap.Matuser = _matuser;
                 rap.Show();
             }
 
