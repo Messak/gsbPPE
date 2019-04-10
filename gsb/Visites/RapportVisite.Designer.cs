@@ -61,16 +61,12 @@
             this.ErrorMotifVisite = new System.Windows.Forms.ErrorProvider(this.components);
             this.ErrorConfianceLabo = new System.Windows.Forms.ErrorProvider(this.components);
             this.ErrorConnaissancePrat = new System.Windows.Forms.ErrorProvider(this.components);
-            this.comboBoxconfpract = new System.Windows.Forms.ComboBox();
-            this.ConfPract = new System.Windows.Forms.Label();
-            this.ErrorConfiancePrat = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_echantillonOffert)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_echantillonPresente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ErrorPraticien)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ErrorMotifVisite)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ErrorConfianceLabo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ErrorConnaissancePrat)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ErrorConfiancePrat)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -218,7 +214,7 @@
             // 
             this.ConfLabo.AutoSize = true;
             this.ConfLabo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.ConfLabo.Location = new System.Drawing.Point(609, 266);
+            this.ConfLabo.Location = new System.Drawing.Point(609, 219);
             this.ConfLabo.Name = "ConfLabo";
             this.ConfLabo.Size = new System.Drawing.Size(178, 25);
             this.ConfLabo.TabIndex = 16;
@@ -228,7 +224,7 @@
             // 
             this.ConnaissancePract.AutoSize = true;
             this.ConnaissancePract.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.ConnaissancePract.Location = new System.Drawing.Point(609, 312);
+            this.ConnaissancePract.Location = new System.Drawing.Point(609, 265);
             this.ConnaissancePract.Name = "ConnaissancePract";
             this.ConnaissancePract.Size = new System.Drawing.Size(228, 25);
             this.ConnaissancePract.TabIndex = 17;
@@ -294,7 +290,7 @@
             "9",
             "10",
             "Aucune évaluation"});
-            this.comboBoxConfLab.Location = new System.Drawing.Point(912, 266);
+            this.comboBoxConfLab.Location = new System.Drawing.Point(912, 219);
             this.comboBoxConfLab.Name = "comboBoxConfLab";
             this.comboBoxConfLab.Size = new System.Drawing.Size(121, 24);
             this.comboBoxConfLab.TabIndex = 25;
@@ -317,7 +313,7 @@
             "9",
             "10",
             "Aucune évaluation"});
-            this.comboBoxConnaissancepract.Location = new System.Drawing.Point(912, 312);
+            this.comboBoxConnaissancepract.Location = new System.Drawing.Point(912, 265);
             this.comboBoxConnaissancepract.Name = "comboBoxConnaissancepract";
             this.comboBoxConnaissancepract.Size = new System.Drawing.Size(121, 24);
             this.comboBoxConnaissancepract.TabIndex = 26;
@@ -401,43 +397,6 @@
             // 
             this.ErrorConnaissancePrat.ContainerControl = this;
             // 
-            // comboBoxconfpract
-            // 
-            this.comboBoxconfpract.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxconfpract.FormattingEnabled = true;
-            this.comboBoxconfpract.Items.AddRange(new object[] {
-            "0",
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10",
-            "Aucune évaluation"});
-            this.comboBoxconfpract.Location = new System.Drawing.Point(912, 217);
-            this.comboBoxconfpract.Name = "comboBoxconfpract";
-            this.comboBoxconfpract.Size = new System.Drawing.Size(121, 24);
-            this.comboBoxconfpract.TabIndex = 24;
-            this.comboBoxconfpract.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
-            // 
-            // ConfPract
-            // 
-            this.ConfPract.AutoSize = true;
-            this.ConfPract.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.ConfPract.Location = new System.Drawing.Point(610, 217);
-            this.ConfPract.Name = "ConfPract";
-            this.ConfPract.Size = new System.Drawing.Size(217, 25);
-            this.ConfPract.TabIndex = 15;
-            this.ConfPract.Text = "Confiance practicien/10";
-            // 
-            // ErrorConfiancePrat
-            // 
-            this.ErrorConfiancePrat.ContainerControl = this;
-            // 
             // RapportVisite
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -448,14 +407,12 @@
             this.Controls.Add(this.datePickerProchainevisite);
             this.Controls.Add(this.comboBoxConnaissancepract);
             this.Controls.Add(this.comboBoxConfLab);
-            this.Controls.Add(this.comboBoxconfpract);
             this.Controls.Add(this.comboboxrdv);
             this.Controls.Add(this.Labeloffreechantillions);
             this.Controls.Add(this.LabelOffreechantillons);
             this.Controls.Add(this.BtnFermer);
             this.Controls.Add(this.ConnaissancePract);
             this.Controls.Add(this.ConfLabo);
-            this.Controls.Add(this.ConfPract);
             this.Controls.Add(this.prdnewrdv);
             this.Controls.Add(this.Btnsubmit);
             this.Controls.Add(this.richTextBoxBilan);
@@ -479,7 +436,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.ErrorMotifVisite)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ErrorConfianceLabo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ErrorConnaissancePrat)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ErrorConfiancePrat)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -519,8 +475,5 @@
         private System.Windows.Forms.ErrorProvider ErrorMotifVisite;
         private System.Windows.Forms.ErrorProvider ErrorConfianceLabo;
         private System.Windows.Forms.ErrorProvider ErrorConnaissancePrat;
-        private System.Windows.Forms.ComboBox comboBoxconfpract;
-        private System.Windows.Forms.Label ConfPract;
-        private System.Windows.Forms.ErrorProvider ErrorConfiancePrat;
     }
 }

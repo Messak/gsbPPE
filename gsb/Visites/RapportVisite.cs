@@ -118,15 +118,13 @@ namespace gsb
         {
             ErrorPraticien.Clear();
             ErrorMotifVisite.Clear();
-            ErrorConfiancePrat.Clear();
             ErrorConfianceLabo.Clear();
             ErrorConnaissancePrat.Clear();
 
-            if (comboBox_Practiciens.Text == "" || comboBoxMotifVisite.Text == "" || comboBoxconfpract.Text == "" || comboBoxConfLab.Text == "" || comboBoxConnaissancepract.Text == "")
+            if (comboBox_Practiciens.Text == "" || comboBoxMotifVisite.Text == "" || comboBoxConfLab.Text == "" || comboBoxConnaissancepract.Text == "")
             {
                 if (comboBox_Practiciens.Text == "") { ErrorPraticien.SetError(comboBox_Practiciens, "Séléctionner un praticien"); }
                 if (comboBoxMotifVisite.Text == "") { ErrorMotifVisite.SetError(comboBoxMotifVisite, "Séléctionner Motif"); }
-                if (comboBoxconfpract.Text == "") { ErrorConfiancePrat.SetError(comboBoxconfpract, "Séléctionner une valeur"); }
                 if (comboBoxConfLab.Text == "") { ErrorConfianceLabo.SetError(comboBoxConfLab, "Séléctionner une valeur"); }
                 if (comboBoxConnaissancepract.Text == "") { ErrorConnaissancePrat.SetError(comboBoxConnaissancepract, "Séléctionner une valeur"); }
             }
