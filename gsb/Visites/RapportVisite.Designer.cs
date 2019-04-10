@@ -52,11 +52,11 @@
             this.comboBoxConnaissancepract = new System.Windows.Forms.ComboBox();
             this.datePickerProchainevisite = new System.Windows.Forms.DateTimePicker();
             this.dataGridView_echantillonOffert = new System.Windows.Forms.DataGridView();
-            this.dataGridViewComboBoxColumn1 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewOffertComboBoxColumnMedicament = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dataGridViewOffertTextBoxColumnQuantite = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView_echantillonPresente = new System.Windows.Forms.DataGridView();
-            this.Medicaments = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataGridViewPresenteComboBoxColumnMedicament = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.DataGridViewPresenteTextBoxColumnQuantite = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ErrorPraticien = new System.Windows.Forms.ErrorProvider(this.components);
             this.ErrorMotifVisite = new System.Windows.Forms.ErrorProvider(this.components);
             this.ErrorConfianceLabo = new System.Windows.Forms.ErrorProvider(this.components);
@@ -334,26 +334,27 @@
             this.dataGridView_echantillonOffert.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dataGridView_echantillonOffert.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_echantillonOffert.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewComboBoxColumn1,
-            this.dataGridViewTextBoxColumn1});
+            this.dataGridViewOffertComboBoxColumnMedicament,
+            this.dataGridViewOffertTextBoxColumnQuantite});
             this.dataGridView_echantillonOffert.Location = new System.Drawing.Point(58, 342);
             this.dataGridView_echantillonOffert.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView_echantillonOffert.Name = "dataGridView_echantillonOffert";
             this.dataGridView_echantillonOffert.RowTemplate.Height = 24;
             this.dataGridView_echantillonOffert.Size = new System.Drawing.Size(262, 150);
             this.dataGridView_echantillonOffert.TabIndex = 44;
+            this.dataGridView_echantillonOffert.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataGridView_echantillonOffert_DataError);
             // 
-            // dataGridViewComboBoxColumn1
+            // dataGridViewOffertComboBoxColumnMedicament
             // 
-            this.dataGridViewComboBoxColumn1.Frozen = true;
-            this.dataGridViewComboBoxColumn1.HeaderText = "Médicament";
-            this.dataGridViewComboBoxColumn1.Name = "dataGridViewComboBoxColumn1";
+            this.dataGridViewOffertComboBoxColumnMedicament.Frozen = true;
+            this.dataGridViewOffertComboBoxColumnMedicament.HeaderText = "Médicament";
+            this.dataGridViewOffertComboBoxColumnMedicament.Name = "dataGridViewOffertComboBoxColumnMedicament";
             // 
-            // dataGridViewTextBoxColumn1
+            // dataGridViewOffertTextBoxColumnQuantite
             // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "Nombre";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewOffertTextBoxColumnQuantite.HeaderText = "Quantite";
+            this.dataGridViewOffertTextBoxColumnQuantite.Name = "dataGridViewOffertTextBoxColumnQuantite";
+            this.dataGridViewOffertTextBoxColumnQuantite.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // dataGridView_echantillonPresente
             // 
@@ -361,8 +362,8 @@
             this.dataGridView_echantillonPresente.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dataGridView_echantillonPresente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_echantillonPresente.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Medicaments,
-            this.Nombre});
+            this.DataGridViewPresenteComboBoxColumnMedicament,
+            this.DataGridViewPresenteTextBoxColumnQuantite});
             this.dataGridView_echantillonPresente.Location = new System.Drawing.Point(707, 342);
             this.dataGridView_echantillonPresente.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView_echantillonPresente.Name = "dataGridView_echantillonPresente";
@@ -370,17 +371,17 @@
             this.dataGridView_echantillonPresente.Size = new System.Drawing.Size(262, 150);
             this.dataGridView_echantillonPresente.TabIndex = 45;
             // 
-            // Medicaments
+            // DataGridViewPresenteComboBoxColumnMedicament
             // 
-            this.Medicaments.Frozen = true;
-            this.Medicaments.HeaderText = "Médicament";
-            this.Medicaments.Name = "Medicaments";
+            this.DataGridViewPresenteComboBoxColumnMedicament.Frozen = true;
+            this.DataGridViewPresenteComboBoxColumnMedicament.HeaderText = "Médicament";
+            this.DataGridViewPresenteComboBoxColumnMedicament.Name = "DataGridViewPresenteComboBoxColumnMedicament";
             // 
-            // Nombre
+            // DataGridViewPresenteTextBoxColumnQuantite
             // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.DataGridViewPresenteTextBoxColumnQuantite.HeaderText = "Quantité";
+            this.DataGridViewPresenteTextBoxColumnQuantite.Name = "DataGridViewPresenteTextBoxColumnQuantite";
+            this.DataGridViewPresenteTextBoxColumnQuantite.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // ErrorPraticien
             // 
@@ -412,6 +413,7 @@
             this.buttonModifier.Text = "Modifier";
             this.buttonModifier.UseVisualStyleBackColor = true;
             this.buttonModifier.Visible = false;
+            this.buttonModifier.Click += new System.EventHandler(this.buttonModifier_Click);
             // 
             // RapportVisite
             // 
@@ -483,16 +485,16 @@
         private System.Windows.Forms.ComboBox comboBoxConnaissancepract;
         private System.Windows.Forms.DateTimePicker datePickerProchainevisite;
         private System.Windows.Forms.DataGridView dataGridView_echantillonOffert;
-        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewComboBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridView dataGridView_echantillonPresente;
-        private System.Windows.Forms.DataGridViewComboBoxColumn Medicaments;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.ErrorProvider ErrorPraticien;
         private System.Windows.Forms.ErrorProvider ErrorMotifVisite;
         private System.Windows.Forms.ErrorProvider ErrorConfianceLabo;
         private System.Windows.Forms.ErrorProvider ErrorConnaissancePrat;
         private System.Windows.Forms.ErrorProvider ErrorConfiancePrat;
         private System.Windows.Forms.Button buttonModifier;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewOffertComboBoxColumnMedicament;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewOffertTextBoxColumnQuantite;
+        private System.Windows.Forms.DataGridViewComboBoxColumn DataGridViewPresenteComboBoxColumnMedicament;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DataGridViewPresenteTextBoxColumnQuantite;
     }
 }
