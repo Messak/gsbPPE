@@ -344,6 +344,7 @@ namespace gsb
                 removeAllMedicament.ReqAdmin(reqDeleteMedicament);
                 removeAllMedicament.fermer();
                 ajouterToutlesEchantillons();
+                MessageBox.Show("Rapport modifié !");
             }
         }
     }

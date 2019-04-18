@@ -42,6 +42,8 @@
             // 
             // dataGridView
             // 
+            this.dataGridView.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.NomPrat,
@@ -52,10 +54,11 @@
             this.VillePrat,
             this.CoefNotorietePrat,
             this.TypePrat});
-            this.dataGridView.Location = new System.Drawing.Point(57, 28);
-            this.dataGridView.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridView.GridColor = System.Drawing.SystemColors.ControlLightLight;
+            this.dataGridView.Location = new System.Drawing.Point(0, -1);
             this.dataGridView.Name = "dataGridView";
-            this.dataGridView.Size = new System.Drawing.Size(1117, 532);
+            this.dataGridView.RowHeadersVisible = false;
+            this.dataGridView.Size = new System.Drawing.Size(803, 432);
             this.dataGridView.TabIndex = 2;
             // 
             // NomPrat
@@ -100,10 +103,11 @@
             // 
             // Praticiens
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1201, 573);
+            this.ClientSize = new System.Drawing.Size(802, 426);
             this.Controls.Add(this.dataGridView);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Praticiens";
             this.Text = "Praticiens";
             this.Load += new System.EventHandler(this.Praticiens_Load);
