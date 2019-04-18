@@ -63,6 +63,16 @@ namespace gsb.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap document {
+            get {
+                object obj = ResourceManager.GetObject("document", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap eye_icon {
             get {
                 object obj = ResourceManager.GetObject("eye_icon", resourceCulture);

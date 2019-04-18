@@ -191,5 +191,8 @@
   <ItemGroup>
     <None Include="Resources\12125-eye-icon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\document.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
