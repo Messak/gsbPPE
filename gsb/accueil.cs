@@ -78,13 +78,7 @@ namespace gsb
             resetButtons();
             buttonRapportMain.Visible = false;
             buttonRapportLister.Visible = true;
-            if (!(statututilisateur.Text == "responsable"))
-            {
-                buttonRapportModif.Visible = false;
-                buttonRapportLister.Size = new Size(388, 43);
-            }
-            else
-                buttonRapportModif.Visible = true;
+            buttonRapportModif.Visible = true;
         }
         private void buttonVisiteurMain_Click(object sender, EventArgs e)
         {
